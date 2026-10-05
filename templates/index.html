@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="manifest" href="/manifest.json">
+    <title>🎯 台股量化多因子選股戰情室</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans TC', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.5;
+            padding: 16px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #334155;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        h1 { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .badge-live {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            padding: 3px 8px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .search-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .search-input-wrap {
+            flex: 1;
+            min-width: 260px;
+            position: relative;
+        }
+        .search-box {
+            width: 100%;
+            background: #1e293b;
+            border: 1px solid #334155;
+            padding: 12px 16px;
+            border-radius: 10px;
+            color: #f8fafc;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .search-box:focus { border-color: #38bdf8; }
+        
+        .btn {
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+        .btn-gold { background: #fbbf24; color: #000; }
+        .btn-dark { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
+        .btn-dark:hover, .btn-dark.active { background: #38bdf8; color: #0f172a; border-color: #38bdf8; }
+
+        .shortcuts {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            scrollbar-width: none;
+        }
+        .shortcuts::-webkit-scrollbar { display: none; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 14px 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::before {
+            content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px;
+        }
+        .stat-card.c-blue::before { background: #38bdf8; }
+        .stat-card.c-gold::before { background: #fbbf24; }
+        .stat-card.c-green::before { background: #10b981; }
+        .stat-card.c-purple::before { background: #c084fc; }
+        .stat-card.c-red::before { background: #ef4444; }
+        .stat-title { font-size: 12px; color: #94a3b8; text-transform: uppercase; }
+        .stat-val { font-size: 24px; font-weight: 800; margin-top: 2px; }
+
+        .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+
+        .table-container {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background: #172033;
+            color: #94a3b8;
+            font-weight: 600;
+            padding: 12px 14px;
+            border-bottom: 1px solid #334155;
+            white-space: nowrap;
+        }
+        th.sortable {
+            cursor: pointer;
+            user-select: none;
+            transition: color .2s, background .2s;
+        }
+        th.sortable:hover,
+        th.sortable:focus-visible {
+            color: #e2e8f0;
+            background: #1c2740;
+            outline: none;
+        }
+        th .sort-indicator {
+            display: inline-block;
+            min-width: 14px;
+            margin-left: 4px;
+            color: #64748b;
+            opacity: .45;
+            text-align: center;
+        }
+        th[aria-sort="ascending"] .sort-indicator,
+        th[aria-sort="descending"] .sort-indicator {
+            color: #38bdf8;
+            opacity: 1;
+        }
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+            vertical-align: middle;
+        }
+        tr:hover { background: #334155; }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 7px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 4px;
+            margin-bottom: 2px;
+        }
+        .tag-buy { background: rgba(251, 191, 36, 0.2); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.4); }
+        .tag-pass { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+        .tag-fail { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+        .tag-chip { background: rgba(192, 132, 252, 0.2); color: #c084fc; }
+        .tag-news { background: rgba(56, 189, 248, 0.2); color: #38bdf8; cursor: pointer; text-decoration: underline; }
+        .tag-neutral { background: rgba(148, 163, 184, 0.15); color: #94a3b8; }
+
+        .stock-name { font-weight: 700; font-size: 15px; color: #fff; }
+        .stock-id { color: #38bdf8; font-family: monospace; font-size: 13px; }
+        .stock-sector { color: #94a3b8; font-size: 12px; margin-left: 4px; }
+        .main-business-box {
+            font-size: 12px;
+            color: #cbd5e1;
+            line-height: 1.45;
+            max-width: 210px;
+            min-width: 140px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            word-break: break-word;
+            cursor: default;
+        }
+        .main-business-box:hover {
+            color: #38bdf8;
+        }
+
+        .signal-pill {
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        .sig-buy { background: #fbbf24; color: #000; box-shadow: 0 0 10px rgba(251, 191, 36, 0.4); }
+        .sig-hold { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
+        .sig-sell { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+        .sig-wait { background: rgba(148, 163, 184, 0.15); color: #94a3b8; }
+
+        .num-pos { color: #ef4444; font-weight: 600; }
+        .num-neg { color: #10b981; font-weight: 600; }
+        .num-neutral { color: #94a3b8; }
+
+        .modal-bg {
+            display: none;
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            align-items: center; justify-content: center;
+            padding: 16px;
+        }
+        .modal-bg.active { display: flex; }
+        .modal-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            max-width: 600px; width: 100%;
+            max-height: 80vh; overflow-y: auto;
+            padding: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+        .news-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #334155;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-title {
+            color: #f8fafc;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .news-title:hover { color: #38bdf8; }
+        .news-meta { font-size: 12px; color: #94a3b8; display: flex; gap: 8px; }
+
+        .spinner {
+            display: inline-block; width: 14px; height: 14px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%; border-top-color: #fff;
+            animation: spin 0.8s linear infinite;
+        }
+        /* --- 類股面板與自訂選項樣式 --- */
+        .category-panel {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 16px;
+        }
+        .category-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .category-select-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            min-width: 280px;
+        }
+        .category-select {
+            flex: 1;
+            background: #0f172a;
+            border: 1px solid #475569;
+            padding: 10px 14px;
+            border-radius: 8px;
+            color: #f8fafc;
+            font-size: 14px;
+            outline: none;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .category-select:focus { border-color: #38bdf8; }
+        .category-select optgroup {
+            font-weight: 700;
+            color: #38bdf8;
+            background: #1e293b;
+        }
+        .category-select option {
+            font-weight: 400;
+            color: #f8fafc;
+            background: #0f172a;
+            padding: 4px;
+        }
+
+        .category-active-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            color: #38bdf8;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 12px;
+            animation: fadeIn 0.2s ease;
+        }
+        .btn-clear-filter {
+            background: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            border-radius: 6px;
+            padding: 3px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-clear-filter:hover {
+            background: #ef4444;
+            color: #fff;
+        }
+
+        /* 搜尋框智慧類股提示下拉清單 */
+        .category-hints {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            right: 0;
+            background: #1e293b;
+            border: 1px solid #475569;
+            border-radius: 10px;
+            box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            max-height: 280px;
+            overflow-y: auto;
+            padding: 6px;
+        }
+        .category-hint-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background 0.15s;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+        }
+        .category-hint-item:last-child { border-bottom: none; }
+        .category-hint-item:hover { background: #334155; }
+        .hint-info { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+        .hint-count { color: #94a3b8; font-size: 11px; }
+        .hint-actions { display: flex; gap: 6px; }
+        .btn-mini {
+            padding: 4px 10px;
+            font-size: 12px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.15s;
+        }
+        .btn-mini-scan { background: #fbbf24; color: #000; }
+        .btn-mini-scan:hover { filter: brightness(1.1); }
+        .btn-mini-filter { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); }
+        .btn-mini-filter:hover { background: #38bdf8; color: #0f172a; }
+
+        /* 自訂類股管理表單樣式 */
+        .form-group { margin-bottom: 14px; }
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #94a3b8;
+            margin-bottom: 6px;
+        }
+        .form-input, .form-textarea {
+            width: 100%;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: #f8fafc;
+            padding: 10px 12px;
+            font-size: 14px;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus, .form-textarea:focus { border-color: #38bdf8; }
+        .custom-card {
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        /* 母體掃描與即時進度條樣式 */
+        .universe-scan-bar {
+            background: #172033;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .scan-progress-card {
+            background: #1e293b;
+            border: 1px solid #38bdf8;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.15);
+            animation: fadeIn 0.3s ease;
+        }
+        .progress-bar-bg {
+            width: 100%;
+            height: 8px;
+            background: #0f172a;
+            border-radius: 9999px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #38bdf8, #10b981);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+        .btn-stop-scan {
+            background: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            border-radius: 6px;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-stop-scan:hover {
+            background: #ef4444;
+            color: #fff;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>🎯 台股量化多因子選股戰情室 <span class="badge-live">LIVE WEB</span></h1>
+                <div style="color: #94a3b8; font-size: 12px; margin-top: 3px;">
+                    四層漏斗：基本面營收EPS ✕ 布林帶寬壓縮突破 ✕ MACD翻正 ✕ 籌碼吸籌 ✕ 即時新聞爬蟲
+                </div>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                <button class="btn btn-gold" style="padding: 7px 14px; font-size: 13px;" onclick="saveCurrentToHistory()" title="將當前分析結果存入歷史紀錄，包含離線HTML/Excel CSV/JSON">
+                    💾 封存歷史紀錄
+                </button>
+                <a href="/history/index.html" target="_blank" class="btn btn-dark" style="padding: 7px 14px; font-size: 13px; text-decoration: none;" title="查看歷次歷史紀錄與回顧檢驗總表">
+                    📜 歷次紀錄總覽
+                </a>
+            </div>
+        </header>
+
+        <div class="search-container">
+            <div class="search-input-wrap">
+                <input type="text" id="searchInput" class="search-box" placeholder="🔍 輸入代號、名稱 (如 2454、聯發科) 或類股關鍵字 (如 集團、半導體)..." onkeydown="handleSearchKey(event)" oninput="handleSearchInput()" autocomplete="off">
+                <div id="searchCategoryHints" class="category-hints" style="display:none;"></div>
+            </div>
+            <button class="btn" id="btnScanSingle" onclick="triggerSingleScan()">
+                <span>⚡ 即時深度掃描</span>
+            </button>
+        </div>
+
+        <!-- 即時掃描進度指示條 (多執行緒加速與進度回饋) -->
+        <div id="scanProgressBarCard" class="scan-progress-card" style="display:none;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:8px;">
+                <span id="scanProgressStatus" style="font-weight:700; font-size:13px; color:#38bdf8; display:flex; align-items:center; gap:6px;">
+                    <span class="spinner"></span> 正在背景加速爬蟲掃描中...
+                </span>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <span id="scanProgressStats" style="font-size:12px; color:#cbd5e1;"></span>
+                    <button class="btn-stop-scan" onclick="stopScan()">🛑 中止掃描</button>
+                </div>
+            </div>
+            <div class="progress-bar-bg">
+                <div id="scanProgressBarFill" class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <!-- 類股專屬控制面板 (集團股、半導體族群與自訂類股) -->
+        <div class="category-panel">
+            <div class="category-bar">
+                <div class="category-select-wrap">
+                    <span style="font-size:14px; font-weight:700; color:#38bdf8; white-space:nowrap;">🎯 類股族群：</span>
+                    <select id="categorySelect" class="category-select" onchange="onCategorySelectChange()">
+                        <option value="">-- 請選擇類股族群 (集團 / 半導體 / 自訂) --</option>
+                    </select>
+                </div>
+                <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                    <button class="btn btn-gold" id="btnScanCategory" onclick="scanSelectedCategory()" title="背景批次掃描該類股所有股票">
+                        <span>⚡ 批次掃描此類股</span>
+                    </button>
+                    <button class="btn btn-dark" id="btnFilterCategory" onclick="filterBySelectedCategory()" title="表格僅篩選該類股">
+                        <span>🔍 篩選表格</span>
+                    </button>
+                    <button class="btn btn-dark" style="border-color:#38bdf8; color:#38bdf8;" onclick="openCustomCategoryModal()" title="新增或管理自訂類股名單">
+                        <span>⚙️ 自訂類股管理</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 母體批量掃描控制列 (全部掃描 / 掃描 XX 檔股票) -->
+            <div class="universe-scan-bar">
+                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <span style="font-size:13px; font-weight:700; color:#fbbf24;">🚀 母體批量掃描：</span>
+                    <button class="btn btn-gold" onclick="triggerBatchScanWithLimit('watchlist_all', null)" title="深度掃描全部 1,215 檔母體股票">
+                        ⚡ 全部掃描 (1,215檔)
+                    </button>
+                    <button class="btn btn-dark" onclick="triggerBatchScanWithLimit('watchlist_all', 30)">前30檔</button>
+                    <button class="btn btn-dark" onclick="triggerBatchScanWithLimit('watchlist_all', 50)">前50檔</button>
+                    <button class="btn btn-dark" onclick="triggerBatchScanWithLimit('watchlist_all', 100)">前100檔</button>
+                    <button class="btn btn-dark" onclick="triggerBatchScanWithLimit('watchlist_all', 200)">前200檔</button>
+                    <button class="btn btn-dark" onclick="triggerBatchScanWithLimit('watchlist_all', 500)">前500檔</button>
+                </div>
+                <div style="display:flex; align-items:center; gap:6px; margin-left:auto;">
+                    <span style="font-size:13px; color:#94a3b8; white-space:nowrap;">掃描</span>
+                    <input type="number" id="customLimitInput" class="form-input" style="width:75px; padding:5px 8px; font-size:13px; text-align:center;" placeholder="檔數" min="1" max="2500" value="80">
+                    <span style="font-size:13px; color:#94a3b8; white-space:nowrap;">檔股票</span>
+                    <button class="btn btn-dark" style="border-color:#38bdf8; color:#38bdf8; padding:6px 12px;" onclick="triggerCustomLimitScan()" title="執行自訂檔數掃描">
+                        ▶ 執行
+                    </button>
+                </div>
+            </div>
+
+            <!-- 類股篩選進行中提示條 -->
+            <div class="category-active-banner" id="categoryActiveBanner" style="display:none;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <span>📌 目前表格鎖定類股：<strong id="activeCategoryName" style="color:#fff;"></strong></span>
+                    <span id="activeCategoryCount" style="font-size:12px; color:#cbd5e1;"></span>
+                </div>
+                <button class="btn-clear-filter" onclick="clearCategoryFilter()">✕ 清除類股篩選</button>
+            </div>
+
+            <!-- 常用快捷列標籤 -->
+            <div class="shortcuts" id="shortcutsBar">
+                <button class="btn btn-gold" onclick="triggerBatchScan('core')">⚡ 核心30檔</button>
+                <button class="btn btn-dark" onclick="triggerBatchScan('group_foxconn')">🏢 鴻海集團</button>
+                <button class="btn btn-dark" onclick="triggerBatchScan('group_tsmc')">💎 台積電概念</button>
+                <button class="btn btn-dark" onclick="triggerBatchScan('semi_cowos')">💎 半導體CoWoS</button>
+                <button class="btn btn-dark" onclick="triggerBatchScan('semi_ic_design')">🧠 IC設計</button>
+                <button class="btn btn-dark" onclick="triggerBatchScan('ai')">🔥 AI伺服器</button>
+                <button class="btn btn-dark" onclick="triggerBatchScan('power')">⚡ 重電綠能</button>
+                <button class="btn btn-dark" onclick="loadTopGainers()">📈 載入漲幅榜</button>
+                <button class="btn btn-dark" style="border-color: #ef4444; color: #fca5a5; margin-left: auto;" onclick="clearAllData()">🗑️ 刪除舊資料重新加載</button>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card c-blue">
+                <div class="stat-title">已載入標的</div>
+                <div class="stat-val" id="statTotal">0</div>
+            </div>
+            <div class="stat-card c-gold">
+                <div class="stat-title">✨ 多因子強烈推薦</div>
+                <div class="stat-val" style="color: #fbbf24;" id="statStrongBuy">0</div>
+            </div>
+            <div class="stat-card c-green">
+                <div class="stat-title">🏢 基本面資優</div>
+                <div class="stat-val" style="color: #10b981;" id="statFundPass">0</div>
+            </div>
+            <div class="stat-card c-purple">
+                <div class="stat-title">🐋 主力/投信吸籌</div>
+                <div class="stat-val" style="color: #c084fc;" id="statChipBull">0</div>
+            </div>
+            <div class="stat-card c-red">
+                <div class="stat-title">🛑 賣出警戒 / 破線</div>
+                <div class="stat-val" style="color: #ef4444;" id="statRisk">0</div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="btn btn-dark active" onclick="filterTab('all', this)">全部標的</button>
+            <button class="btn btn-dark" onclick="filterTab('strong_buy', this)">✨ 多因子推薦</button>
+            <button class="btn btn-dark" onclick="filterTab('fund_pass', this)">🏢 基本面資優</button>
+            <button class="btn btn-dark" onclick="filterTab('chip_bull', this)">🐋 主力吸籌</button>
+            <button class="btn btn-dark" onclick="filterTab('risk', this)">🛑 出場警戒</button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>標的資訊</th>
+                        <th>主要營業項目</th>
+                        <th class="sortable" data-sort-key="decision" tabindex="0" aria-sort="none" onclick="toggleSort('decision')" onkeydown="handleSortKeydown(event, 'decision')">綜合決策<span class="sort-indicator" aria-hidden="true">↕</span></th>
+                        <th class="sortable" data-sort-key="beauty" tabindex="0" aria-sort="none" onclick="toggleSort('beauty')" onkeydown="handleSortKeydown(event, 'beauty')">顏值<span class="sort-indicator" aria-hidden="true">↕</span></th>
+                        <th class="sortable" data-sort-key="fundamental" tabindex="0" aria-sort="none" onclick="toggleSort('fundamental')" onkeydown="handleSortKeydown(event, 'fundamental')">基本面 (營收 YoY / EPS)<span class="sort-indicator" aria-hidden="true">↕</span></th>
+                        <th class="sortable" data-sort-key="technical" tabindex="0" aria-sort="none" onclick="toggleSort('technical')" onkeydown="handleSortKeydown(event, 'technical')">技術面 (布林帶寬 ✕ MACD ✕ 均線)<span class="sort-indicator" aria-hidden="true">↕</span></th>
+                        <th class="sortable" data-sort-key="chips" tabindex="0" aria-sort="none" onclick="toggleSort('chips')" onkeydown="handleSortKeydown(event, 'chips')">籌碼面 (大戶多空 / 主力吸籌)<span class="sort-indicator" aria-hidden="true">↕</span></th>
+                        <th class="sortable" data-sort-key="news" tabindex="0" aria-sort="none" onclick="toggleSort('news')" onkeydown="handleSortKeydown(event, 'news')">新聞情報 (情緒分析)<span class="sort-indicator" aria-hidden="true">↕</span></th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr><td colspan="8" style="text-align:center; padding: 30px; color: #94a3b8;">請在搜尋欄輸入股票代號（例如 2454），或點擊上方「⚡ 快速推薦」載入標的</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal-bg" id="newsModal" onclick="closeModal(event)">
+        <div class="modal-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                <h3 id="modalStockTitle" style="font-size:18px;">個股即時新聞情報</h3>
+                <button onclick="document.getElementById('newsModal').classList.remove('active')" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">&times;</button>
+            </div>
+            <div id="modalNewsContent"></div>
+        </div>
+    </div>
+
+    <!-- 自訂類股管理彈窗 -->
+    <div class="modal-bg" id="customCategoryModal" onclick="closeCustomCategoryModal(event)">
+        <div class="modal-card" style="max-width: 680px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                <h3 id="customModalTitle" style="font-size:18px;">⚙️ 自訂類股族群管理</h3>
+                <button onclick="document.getElementById('customCategoryModal').classList.remove('active')" style="background:none; border:none; color:#94a3b8; font-size:22px; cursor:pointer;">&times;</button>
+            </div>
+
+            <!-- 新增/編輯表單 -->
+            <div style="background:#0f172a; border:1px solid #334155; border-radius:10px; padding:16px; margin-bottom:20px;">
+                <h4 id="formHeaderTitle" style="font-size:14px; margin-bottom:12px; color:#38bdf8;">➕ 新增自訂類股族群</h4>
+                <input type="hidden" id="customCatId" value="">
+                <div class="form-group">
+                    <label class="form-label">類股名稱 (例如：鴻海大聯盟、我的定存金融股、半導體黑馬)</label>
+                    <input type="text" id="customCatTitle" class="form-input" placeholder="輸入自訂類股名稱...">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">股票清單 (支援代號或名稱，可用逗號、空格或換行隔開，例如：2330, 2454, 聯發科, 3017)</label>
+                    <textarea id="customCatStocks" class="form-textarea" rows="3" placeholder="例如：2330, 2454, 2317 或 台積電, 聯發科, 奇鋐"></textarea>
+                </div>
+                <div style="display:flex; gap:10px; justify-content:flex-end;">
+                    <button class="btn btn-dark" type="button" onclick="resetCustomCategoryForm()">清空重填</button>
+                    <button class="btn btn-gold" id="btnSaveCustomCat" type="button" onclick="saveCustomCategory()">💾 儲存自訂類股</button>
+                </div>
+            </div>
+
+            <!-- 現有清單 -->
+            <div>
+                <h4 style="font-size:14px; margin-bottom:12px; color:#94a3b8;">📋 已儲存的自訂類股清單</h4>
+                <div id="customCategoryList" style="max-height: 240px; overflow-y: auto;">
+                    <div style="text-align:center; color:#64748b; padding:16px;">正在讀取自訂類股...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allStocks = [];
+        let currentFilter = 'all';
+        let tableSort = null;
+        let categoriesData = {};
+        let activeCategoryFilter = null; // { id, title, stocks: [...] }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadCategories();
+            fetchResults();
+            checkScanProgress();
+            setInterval(fetchResults, 8000);
+
+            // 點擊空白處關閉類股智慧提示
+            document.addEventListener('click', (e) => {
+                const searchWrap = document.querySelector('.search-input-wrap');
+                if (searchWrap && !searchWrap.contains(e.target)) {
+                    const hints = document.getElementById('searchCategoryHints');
+                    if (hints) hints.style.display = 'none';
+                }
+            });
+        });
+
+        function getRowDecision(stock) {
+            if (stock.is_strong_buy) return 'strong_buy';
+            if (stock.tech && stock.tech.is_sell) return 'risk';
+            if (stock.fund_ok) return 'fund_pass';
+            return 'normal';
+        }
+
+        function handleSortKeydown(event, key) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleSort(key);
+            }
+        }
+
+        function toggleSort(key) {
+            const direction = tableSort && tableSort.key === key && tableSort.direction === 'desc'
+                ? 'asc'
+                : 'desc';
+            tableSort = { key: key, direction: direction };
+            renderTable();
+        }
+
+        function compareForSort(left, right, direction) {
+            const sign = direction === 'asc' ? 1 : -1;
+
+            if (left === right) return 0;
+            if (left == null) return 1;
+            if (right == null) return -1;
+
+            if (Array.isArray(left) && Array.isArray(right)) {
+                const length = Math.max(left.length, right.length);
+                for (let i = 0; i < length; i += 1) {
+                    const result = compareForSort(left[i], right[i], direction);
+                    if (result !== 0) return result;
+                }
+                return 0;
+            }
+
+            if (Array.isArray(left) || Array.isArray(right)) return 0;
+
+            if (typeof left === 'number' && typeof right === 'number') {
+                return (left - right) * sign;
+            }
+
+            return String(left).localeCompare(String(right), 'zh-Hant-TW') * sign;
+        }
+
+        function getSortValues(stock, key) {
+            const decision = getRowDecision(stock);
+            const decisionRank = {
+                strong_buy: 4,
+                fund_pass: 3,
+                normal: 2,
+                risk: 1
+            };
+
+            if (key === 'decision') return [decisionRank[decision] || 0, stock.stock_id || ''];
+
+            if (key === 'beauty') {
+                const tech = stock.tech || {};
+                return [tech.beauty_score];
+            }
+
+            if (key === 'fundamental') {
+                const fund = stock.fundamental || {};
+                return [fund.revenue_yoy, fund.eps];
+            }
+
+            if (key === 'technical') {
+                const tech = stock.tech || {};
+                const macdScore = tech.macd_turned_positive ? 2 : (tech.macd_bullish ? 1 : 0);
+                return [
+                    tech.is_buy ? 1 : 0,
+                    tech.is_sell ? 0 : 1,
+                    macdScore,
+                    tech.is_bb_breakout ? 1 : 0,
+                    tech.is_bb_compressed ? 1 : 0,
+                    tech.close
+                ];
+            }
+
+            if (key === 'chips') {
+                const chips = stock.chips || {};
+                return [
+                    chips.total_net_5d,
+                    chips.foreign_net_5d,
+                    chips.trust_net_5d,
+                    chips.block_price
+                ];
+            }
+
+            if (key === 'news') {
+                const news = stock.news || {};
+                return [news.sentiment_score, (news.news_list || []).length];
+            }
+
+            return [null];
+        }
+
+        function updateSortIndicators() {
+            const headers = document.querySelectorAll('th.sortable');
+            headers.forEach(header => {
+                const key = header.getAttribute('data-sort-key');
+                const indicator = header.querySelector('.sort-indicator');
+                let state = 'none';
+                let text = '↕';
+
+                if (tableSort && tableSort.key === key) {
+                    if (tableSort.direction === 'asc') {
+                        state = 'ascending';
+                        text = '↑';
+                    } else {
+                        state = 'descending';
+                        text = '↓';
+                    }
+                }
+
+                header.setAttribute('aria-sort', state);
+                if (indicator) indicator.innerText = text;
+            });
+        }
+
+        // 載入所有類股（含集團、半導體與自訂類股）
+        async function loadCategories() {
+            try {
+                const res = await fetch('/api/categories');
+                const data = await res.json();
+                if (data.success) {
+                    categoriesData = data.categories || {};
+                    renderCategorySelect(data.groups || []);
+                    renderShortcutsBar();
+                }
+            } catch (e) {
+                console.error('載入類股清單失敗:', e);
+            }
+        }
+
+        // 渲染類股下拉選單 (按 Group 分組)
+        function renderCategorySelect(groups) {
+            const select = document.getElementById('categorySelect');
+            const currentVal = select.value;
+            select.innerHTML = '<option value="">-- 請選擇類股族群 (集團 / 半導體 / 自訂) --</option>';
+
+            const groupMap = {};
+            for (const [id, cat] of Object.entries(categoriesData)) {
+                const g = cat.group || '熱門題材';
+                if (!groupMap[g]) groupMap[g] = [];
+                groupMap[g].push(cat);
+            }
+
+            const defaultGroups = ["核心精選", "集團概念", "半導體族群", "熱門題材", "自訂類股"];
+            const allGroups = [...new Set([...defaultGroups, ...Object.keys(groupMap)])];
+
+            allGroups.forEach(g => {
+                const list = groupMap[g];
+                if (list && list.length > 0) {
+                    const optgroup = document.createElement('optgroup');
+                    optgroup.label = `【${g}】`;
+                    list.forEach(c => {
+                        const opt = document.createElement('option');
+                        opt.value = c.id;
+                        opt.textContent = `${c.title} (${c.count}檔)`;
+                        optgroup.appendChild(opt);
+                    });
+                    select.appendChild(optgroup);
+                }
+            });
+
+            if (currentVal && categoriesData[currentVal]) {
+                select.value = currentVal;
+            }
+        }
+
+        // 渲染快捷按鈕列
+        function renderShortcutsBar() {
+            const bar = document.getElementById('shortcutsBar');
+            if (!bar) return;
+
+            let html = '';
+            html += `<button class="btn btn-gold" onclick="triggerBatchScan('core')">⚡ 核心30檔</button>`;
+            if (categoriesData['group_foxconn']) html += `<button class="btn btn-dark" onclick="triggerBatchScan('group_foxconn')">🏢 鴻海集團</button>`;
+            if (categoriesData['group_tsmc']) html += `<button class="btn btn-dark" onclick="triggerBatchScan('group_tsmc')">💎 台積電概念</button>`;
+            if (categoriesData['semi_cowos']) html += `<button class="btn btn-dark" onclick="triggerBatchScan('semi_cowos')">💎 半導體CoWoS</button>`;
+            if (categoriesData['semi_ic_design']) html += `<button class="btn btn-dark" onclick="triggerBatchScan('semi_ic_design')">🧠 IC設計</button>`;
+            if (categoriesData['ai']) html += `<button class="btn btn-dark" onclick="triggerBatchScan('ai')">🔥 AI伺服器</button>`;
+            if (categoriesData['power']) html += `<button class="btn btn-dark" onclick="triggerBatchScan('power')">⚡ 重電綠能</button>`;
+
+            // 自訂類股快捷按鈕
+            for (const [id, cat] of Object.entries(categoriesData)) {
+                if (cat.is_custom) {
+                    html += `<button class="btn btn-dark" style="border-color:#38bdf8; color:#38bdf8;" onclick="triggerBatchScan('${id}')" title="自訂類股：${(cat.stocks || []).join(', ')}">${cat.title}</button>`;
+                }
+            }
+
+            html += `<button class="btn btn-dark" onclick="loadTopGainers()">📈 載入漲幅榜</button>`;
+            html += `<button class="btn btn-dark" style="border-color: #ef4444; color: #fca5a5; margin-left: auto;" onclick="clearAllData()">🗑️ 刪除舊資料重新加載</button>`;
+
+            bar.innerHTML = html;
+        }
+
+        function onCategorySelectChange() {
+            // 變更下拉選單時即時反饋
+        }
+
+        async function saveCurrentToHistory() {
+            if (!allStocks || allStocks.length === 0) {
+                alert('目前戰情室尚無任何股票資料可供封存！請先在搜尋欄查詢或執行掃描。');
+                return;
+            }
+            if (!confirm(`確定要將目前 ${allStocks.length} 檔標的之分析結果封存為時間戳歷史紀錄嗎？\n\n系統將自動產出：\n1. 包含主要營業項目之獨立離線 HTML 報告\n2. 供未來比對之 Excel 試算表 (CSV)\n3. 供回測引擎檢驗勝率之完整結構 JSON`)) {
+                return;
+            }
+
+            try {
+                const res = await fetch('/api/history/save', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ tag: 'web_manual', scope: '戰情室即時封存' })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    alert(`✅ 成功封存歷史紀錄！\n\n紀錄代碼：${data.record_id}\n分析時間：${data.datetime}\n標的數量：${data.total_stocks} 檔 (多因子推薦: ${data.strong_buy_count} 檔)\n\n可點擊右上角「📜 歷次紀錄總覽」隨時查閱或進行歷史回測！`);
+                } else {
+                    alert('封存失敗: ' + (data.error || '未知原因'));
+                }
+            } catch (e) {
+                alert('伺服器連線異常: ' + e);
+            }
+        }
+
+        function scanSelectedCategory() {
+            const catId = document.getElementById('categorySelect').value;
+            if (!catId) {
+                alert('請先在下拉選單中選擇一個類股族群（例如：鴻海集團、半導體CoWoS 或自訂類股）');
+                return;
+            }
+            triggerBatchScan(catId);
+        }
+
+        function filterBySelectedCategory() {
+            const catId = document.getElementById('categorySelect').value;
+            if (!catId) {
+                alert('請先在下拉選單中選擇一個類股族群');
+                return;
+            }
+            filterByCategory(catId);
+        }
+
+        function filterByCategory(catId) {
+            const cat = categoriesData[catId];
+            if (!cat) return;
+
+            activeCategoryFilter = cat;
+            document.getElementById('categorySelect').value = catId;
+            document.getElementById('activeCategoryName').innerText = cat.title;
+            document.getElementById('activeCategoryCount').innerText = `(${cat.stocks.length} 檔代碼: ${cat.stocks.join(', ')})`;
+            document.getElementById('categoryActiveBanner').style.display = 'flex';
+            renderTable();
+        }
+
+        function clearCategoryFilter() {
+            activeCategoryFilter = null;
+            document.getElementById('categoryActiveBanner').style.display = 'none';
+            document.getElementById('categorySelect').value = '';
+            renderTable();
+        }
+
+        function handleSearchInput() {
+            const val = document.getElementById('searchInput').value.trim().toLowerCase();
+            renderTable();
+
+            const hintsBox = document.getElementById('searchCategoryHints');
+            if (!val) {
+                hintsBox.style.display = 'none';
+                return;
+            }
+
+            // 尋找符合關鍵字的類股 (例如 "集團", "半導體", "鴻海", "IC", "AI")
+            const matches = [];
+            for (const [id, cat] of Object.entries(categoriesData)) {
+                const titleLower = cat.title.toLowerCase();
+                const groupLower = (cat.group || '').toLowerCase();
+                if (titleLower.includes(val) || groupLower.includes(val)) {
+                    matches.push(cat);
+                }
+            }
+
+            if (matches.length === 0) {
+                hintsBox.style.display = 'none';
+                return;
+            }
+
+            hintsBox.innerHTML = matches.slice(0, 6).map(c => `
+                <div class="category-hint-item">
+                    <div class="hint-info">
+                        <strong>${c.title}</strong>
+                        <span class="hint-count">【${c.group}】共 ${c.count} 檔</span>
+                    </div>
+                    <div class="hint-actions">
+                        <button class="btn-mini btn-mini-filter" onclick="event.stopPropagation(); selectCategoryHint('${c.id}', 'filter')">🔍 篩選表格</button>
+                        <button class="btn-mini btn-mini-scan" onclick="event.stopPropagation(); selectCategoryHint('${c.id}', 'scan')">⚡ 立即掃描</button>
+                    </div>
+                </div>
+            `).join('');
+            hintsBox.style.display = 'block';
+        }
+
+        function selectCategoryHint(catId, action) {
+            document.getElementById('searchCategoryHints').style.display = 'none';
+            document.getElementById('searchInput').value = '';
+            if (action === 'filter') {
+                filterByCategory(catId);
+            } else if (action === 'scan') {
+                triggerBatchScan(catId);
+            }
+        }
+
+        function openCustomCategoryModal() {
+            resetCustomCategoryForm();
+            renderCustomCategoryList();
+            document.getElementById('customCategoryModal').classList.add('active');
+        }
+
+        function closeCustomCategoryModal(e) {
+            if (e.target.id === 'customCategoryModal') {
+                document.getElementById('customCategoryModal').classList.remove('active');
+            }
+        }
+
+        function resetCustomCategoryForm() {
+            document.getElementById('customCatId').value = '';
+            document.getElementById('customCatTitle').value = '';
+            document.getElementById('customCatStocks').value = '';
+            document.getElementById('formHeaderTitle').innerText = '➕ 新增自訂類股族群';
+            document.getElementById('btnSaveCustomCat').innerHTML = '💾 儲存自訂類股';
+        }
+
+        function renderCustomCategoryList() {
+            const container = document.getElementById('customCategoryList');
+            const customItems = Object.values(categoriesData).filter(c => c.is_custom);
+
+            if (customItems.length === 0) {
+                container.innerHTML = '<div style="text-align:center; color:#64748b; padding:16px;">目前尚無自訂類股，請使用上方表單建立！</div>';
+                return;
+            }
+
+            container.innerHTML = customItems.map(c => `
+                <div class="custom-card">
+                    <div>
+                        <div style="font-weight:700; font-size:14px; color:#fff; display:flex; align-items:center; gap:8px;">
+                            ${c.title}
+                            <span class="badge-live" style="font-size:11px;">${c.stocks.length} 檔標的</span>
+                        </div>
+                        <div style="color:#94a3b8; font-size:12px; margin-top:4px;">
+                            ${c.stocks.map(s => `<span class="tag tag-neutral">${s}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:6px;">
+                        <button class="btn-mini btn-mini-filter" onclick="filterByCategory('${c.id}'); document.getElementById('customCategoryModal').classList.remove('active');">🔍 篩選</button>
+                        <button class="btn-mini btn-mini-scan" onclick="triggerBatchScan('${c.id}'); document.getElementById('customCategoryModal').classList.remove('active');">⚡ 掃描</button>
+                        <button class="btn-mini btn-dark" style="background:#334155; color:#cbd5e1;" onclick="editCustomCategory('${c.id}')">✏️ 編輯</button>
+                        <button class="btn-mini btn-dark" style="background:rgba(239,68,68,0.2); color:#fca5a5; border:1px solid rgba(239,68,68,0.4);" onclick="deleteCustomCategory('${c.id}')">🗑️ 刪除</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function saveCustomCategory() {
+            const id = document.getElementById('customCatId').value.trim();
+            const title = document.getElementById('customCatTitle').value.trim();
+            const stocks = document.getElementById('customCatStocks').value.trim();
+
+            if (!title) {
+                alert('請填寫自訂類股名稱！');
+                return;
+            }
+            if (!stocks) {
+                alert('請至少填寫一檔股票代號或名稱！');
+                return;
+            }
+
+            try {
+                const res = await fetch('/api/custom_category', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id, title, stocks })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    alert('✅ ' + data.message);
+                    resetCustomCategoryForm();
+                    await loadCategories();
+                    renderCustomCategoryList();
+                } else {
+                    alert('儲存失敗: ' + (data.error || '未知錯誤'));
+                }
+            } catch (e) {
+                alert('網路傳輸異常: ' + e);
+            }
+        }
+
+        function editCustomCategory(catId) {
+            const cat = categoriesData[catId];
+            if (!cat) return;
+            document.getElementById('customCatId').value = cat.id;
+            document.getElementById('customCatTitle').value = cat.title.replace(/^🏷️\s*/, '');
+            document.getElementById('customCatStocks').value = cat.stocks.join(', ');
+            document.getElementById('formHeaderTitle').innerText = '✏️ 編輯自訂類股：' + cat.title;
+            document.getElementById('btnSaveCustomCat').innerHTML = '💾 更新自訂類股';
+            document.getElementById('customCatTitle').focus();
+        }
+
+        async function deleteCustomCategory(catId) {
+            const cat = categoriesData[catId];
+            const title = cat ? cat.title : catId;
+            if (!confirm(`確定要刪除自訂類股「${title}」嗎？`)) return;
+
+            try {
+                const res = await fetch(`/api/custom_category/${encodeURIComponent(catId)}`, {
+                    method: 'DELETE'
+                });
+                const data = await res.json();
+                if (data.success) {
+                    if (activeCategoryFilter && activeCategoryFilter.id === catId) {
+                        clearCategoryFilter();
+                    }
+                    await loadCategories();
+                    renderCustomCategoryList();
+                } else {
+                    alert('刪除失敗: ' + (data.error || '未知錯誤'));
+                }
+            } catch (e) {
+                alert('刪除請求失敗: ' + e);
+            }
+        }
+
+        async function fetchResults() {
+            try {
+                const res = await fetch('/api/all_results');
+                const data = await res.json();
+                if (data.success) {
+                    allStocks = data.data || [];
+                    updateStats();
+                    renderTable();
+                }
+            } catch (e) {
+                console.error('抓取資料失敗:', e);
+            }
+        }
+
+        async function clearAllData() {
+            if (!confirm('確定要刪除原有的掃描資料並重新加載嗎？')) return;
+            try {
+                const res = await fetch('/api/clear_cache', { method: 'POST' });
+                const data = await res.json();
+                if (data.success) {
+                    allStocks = [];
+                    updateStats();
+                    renderTable();
+                    alert('✅ 原有資料已清空！您可以點擊「⚡ 快速推薦」或選擇類股開始全新掃描。');
+                }
+            } catch (e) {
+                alert('清空失敗: ' + e);
+            }
+        }
+
+        function updateStats() {
+            document.getElementById('statTotal').innerText = allStocks.length;
+            document.getElementById('statStrongBuy').innerText = allStocks.filter(s => getRowDecision(s) === 'strong_buy').length;
+            document.getElementById('statFundPass').innerText = allStocks.filter(s => getRowDecision(s) === 'fund_pass').length;
+            document.getElementById('statChipBull').innerText = allStocks.filter(s => s.chips && (s.chips.is_accumulating || s.chips.trust_consecutive_buy)).length;
+            document.getElementById('statRisk').innerText = allStocks.filter(s => getRowDecision(s) === 'risk').length;
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('tableBody');
+            const searchVal = document.getElementById('searchInput').value.trim().toLowerCase();
+            updateSortIndicators();
+
+            let filtered = allStocks.filter(s => {
+                const decision = getRowDecision(s);
+                let matchTab = false;
+                if (currentFilter === 'all') matchTab = true;
+                else if (currentFilter === 'strong_buy') matchTab = decision === 'strong_buy';
+                else if (currentFilter === 'fund_pass') matchTab = decision === 'fund_pass';
+                else if (currentFilter === 'chip_bull') matchTab = s.chips && (s.chips.is_accumulating || s.chips.trust_consecutive_buy);
+                else if (currentFilter === 'risk') matchTab = decision === 'risk';
+
+                // 類股過濾判斷
+                let matchCategory = true;
+                if (activeCategoryFilter && activeCategoryFilter.stocks) {
+                    matchCategory = activeCategoryFilter.stocks.includes(s.stock_id);
+                }
+
+                const searchTarget = (s.stock_id + ' ' + (s.stock_name || '') + ' ' + (s.sector || '') + ' ' + (s.main_business || '')).toLowerCase();
+                let matchSearch = !searchVal || searchTarget.includes(searchVal);
+                return matchTab && matchCategory && matchSearch;
+            });
+
+            if (tableSort) {
+                filtered.sort((a, b) => compareForSort(getSortValues(a, tableSort.key), getSortValues(b, tableSort.key), tableSort.direction));
+            }
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" style="text-align:center; padding: 30px; color: #94a3b8;">無符合條件的標的，請在搜尋欄輸入新股票或選擇類股直接掃描！</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = filtered.map(s => {
+                const sid = s.stock_id;
+                const sname = s.stock_name || '';
+                const sector = s.sector || '';
+                const mainBiz = s.main_business || '—';
+                const cleanBiz = (mainBiz || '').replace(/"/g, '&quot;');
+
+                const decision = getRowDecision(s);
+                const decisionHtmlMap = {
+                    strong_buy: '<span class="signal-pill sig-buy">✨ 強烈買進</span>',
+                    risk: '<span class="signal-pill sig-sell">🛑 出場警戒</span>',
+                    fund_pass: '<span class="signal-pill sig-hold">🟢 基本面優</span>',
+                    normal: '<span class="signal-pill sig-wait">⚪ 觀察中</span>'
+                };
+                const sigHtml = decisionHtmlMap[decision] || decisionHtmlMap.normal;
+
+                const fund = s.fundamental || {};
+                const yoy = fund.revenue_yoy != null ? (fund.revenue_yoy > 0 ? '+' : '') + fund.revenue_yoy + '%' : 'N/A';
+                const yoyClass = (fund.revenue_yoy || 0) > 0 ? 'num-pos' : 'num-neg';
+                const eps = fund.eps != null ? fund.eps + ' 元' : 'N/A';
+                const fundTag = s.fund_ok ? '<span class="tag tag-pass">合格</span>' : '<span class="tag tag-fail">淘汰</span>';
+                const fallbackTag = fund.is_fallback ? '<span class="tag tag-chip">月初容錯</span>' : '';
+
+                const tech = s.tech || {};
+                const closeP = tech.close != null ? tech.close : 'N/A';
+                const bw = tech.bb_bandwidth || 0;
+                const bwTag = tech.is_bb_compressed ? '<span class="tag tag-buy">帶寬壓縮</span>' : '';
+                const boTag = tech.is_bb_breakout ? '<span class="tag tag-buy">突破上軌</span>' : '';
+                const macdTag = tech.macd_turned_positive ? '<span class="tag tag-pass">MACD翻正</span>' : (tech.macd_bullish ? '<span class="tag tag-pass">MACD紅柱</span>' : '<span class="tag tag-fail">MACD綠柱</span>');
+
+                const chips = s.chips || {};
+                const fNet = chips.foreign_net_5d || 0;
+                const tNet = chips.trust_net_5d || 0;
+                const totNet = chips.total_net_5d || 0;
+                const chipSignals = (chips.chip_signals || []).map(t => '<span class="tag tag-chip">' + t + '</span>').join('');
+                const blockStr = chips.block_price ? '<div style="color: #fbbf24; font-size: 12px;">🐋 鉅額防守: ' + chips.block_price + '元</div>' : '';
+
+                const news = s.news || {};
+                const newsList = news.news_list || [];
+                const newsTag = news.sentiment_label ? '<span class="tag tag-news" onclick="openNews(\'' + sid + '\')">' + news.sentiment_label + ' (' + newsList.length + '則)</span>' : '<span class="tag tag-neutral">無新聞</span>';
+
+                const beautyScore = tech.beauty_score;
+                const beautyComponents = tech.beauty_components || {};
+                const beautyReasons = (tech.beauty_reasons || []).join('；').replace(/"/g, '&quot;');
+                const beautyStatusMap = {
+                    'HIGH': '高顏值',
+                    'WATCHLIST': '觀察名單',
+                    'LOW': '弱勢',
+                    'INSUFFICIENT_DATA': '資料不足'
+                };
+                const beautyStatus = beautyStatusMap[tech.beauty_status] || '待重掃';
+                const beautyColor = beautyScore == null ? '#94a3b8' : (beautyScore >= 80 ? '#10b981' : (beautyScore >= 65 ? '#38bdf8' : '#ef4444'));
+                const beautyDetail = ['trend', 'stair_step', 'high_52w', 'drawdown', 'momentum', 'volatility']
+                    .filter(key => beautyComponents[key] != null)
+                    .map(key => Math.round(beautyComponents[key]))
+                    .join(' / ');
+                const beautyCell = beautyScore == null
+                    ? '<div style="color:#94a3b8;">待重掃</div><div style="font-size:11px;color:#94a3b8;">新掃描後顯示</div>'
+                    : '<div style="font-size:18px;font-weight:800;color:' + beautyColor + ';">' + beautyScore + '</div>' +
+                      '<div style="font-size:11px;font-weight:700;color:' + beautyColor + ';">' + beautyStatus + '</div>' +
+                      '<div style="font-size:11px;color:#94a3b8;margin-top:2px;">' + beautyDetail + '</div>';
+
+                const recheckTag = s.is_rechecked ? '<span class="tag tag-pass" style="background:rgba(56,189,248,0.2); color:#38bdf8;" title="執行時已啟動自動複檢機制確認數據完整性">已複檢</span>' : '';
+
+                return '<tr>' +
+                    '<td><div><span class="stock-name">' + sname + '</span> <span class="stock-sector">' + sector + '</span></div><div class="stock-id">' + sid + '</div></td>' +
+                    '<td><div class="main-business-box" title="' + cleanBiz + '">' + mainBiz + '</div></td>' +
+                    '<td>' + sigHtml + '</td>' +
+                    '<td title="' + beautyReasons + '">' + beautyCell + '</td>' +
+                    '<td><div>' + fundTag + ' ' + fallbackTag + ' ' + recheckTag + '</div><div style="font-size: 13px; margin-top:3px;">YoY: <span class="' + yoyClass + '">' + yoy + '</span> (' + (fund.revenue_month || '') + ')</div><div style="font-size: 13px;">EPS: <strong>' + eps + '</strong></div></td>' +
+                    '<td><div><strong>' + closeP + '</strong> ' + bwTag + ' ' + boTag + ' ' + macdTag + '</div><div style="font-size: 12px; color: #94a3b8; margin-top:3px;">布林帶寬: ' + bw + '% | 月線: ' + (tech.sma20 || '') + '</div><div style="font-size: 12px; color: #cbd5e1;">' + (tech.trend_pattern || '') + '</div></td>' +
+                    '<td><div>' + (chipSignals || '<span class="tag tag-neutral">籌碼溫和</span>') + '</div><div style="font-size: 12px; margin-top:3px;">外資: <span class="' + (fNet > 0 ? 'num-pos' : 'num-neg') + '">' + (fNet > 0 ? '+' : '') + fNet + '張</span> | 投信: <span class="' + (tNet > 0 ? 'num-pos' : 'num-neg') + '">' + (tNet > 0 ? '+' : '') + tNet + '張</span></div><div style="font-size: 12px;">合計: <span class="' + (totNet > 0 ? 'num-pos' : 'num-neg') + '">' + (totNet > 0 ? '+' : '') + totNet + '張</span></div>' + blockStr + '</td>' +
+                    '<td><div>' + newsTag + '</div></td>' +
+                '</tr>';
+            }).join('');
+        }
+
+        function handleSearchKey(e) {
+            if (e.key === 'Enter') {
+                triggerSingleScan();
+            }
+        }
+
+        function filterTableLocally() {
+            renderTable();
+        }
+
+        function filterTab(filter, btn) {
+            currentFilter = filter;
+            document.querySelectorAll('.tabs .btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderTable();
+        }
+
+        async function triggerSingleScan() {
+            const input = document.getElementById('searchInput');
+            const val = input.value.trim();
+            if (!val) {
+                alert('請輸入股票代號或名稱（例如 3008、大立光、2454、聯發科）');
+                return;
+            }
+
+            const btn = document.getElementById('btnScanSingle');
+            btn.innerHTML = '<span class="spinner"></span> 正在深度掃描 ' + val + '...';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/api/scan_single?stock_id=' + encodeURIComponent(val));
+                const data = await res.json();
+                if (data.success) {
+                    await fetchResults();
+                    const target = data.data;
+                    input.value = target.stock_id + ' ' + (target.stock_name || '');
+                    renderTable();
+                } else {
+                    alert('掃描失敗: ' + (data.error || '未知原因'));
+                }
+            } catch (e) {
+                alert('伺服器連線異常: ' + e);
+            } finally {
+                btn.innerHTML = '<span>⚡ 即時深度掃描</span>';
+                btn.disabled = false;
+            }
+        }
+
+        let progressInterval = null;
+
+        function startProgressPolling() {
+            const card = document.getElementById('scanProgressBarCard');
+            if (card) card.style.display = 'block';
+            if (progressInterval) clearInterval(progressInterval);
+            progressInterval = setInterval(checkScanProgress, 1200);
+            checkScanProgress();
+        }
+
+        async function checkScanProgress() {
+            try {
+                const res = await fetch('/api/scan_progress');
+                const data = await res.json();
+                if (data.success && data.progress) {
+                    const p = data.progress;
+                    const card = document.getElementById('scanProgressBarCard');
+                    const status = document.getElementById('scanProgressStatus');
+                    const stats = document.getElementById('scanProgressStats');
+                    const fill = document.getElementById('scanProgressBarFill');
+
+                    if (!card) return;
+
+                    if (p.is_scanning) {
+                        card.style.display = 'block';
+                        fill.style.width = p.percent + '%';
+                        status.innerHTML = `<span class="spinner"></span> 正在多執行緒加速掃描 [${p.current}/${p.total}]：<strong>${p.current_stock || ''}</strong> (${p.percent}%)`;
+                        stats.innerHTML = `已耗時 ${p.elapsed_seconds}s | ✨ 強烈推薦: <strong style="color:#fbbf24;">${p.strong_buy_count}</strong> 檔 | 🏢 基本面優: <strong style="color:#10b981;">${p.fund_ok_count}</strong> 檔`;
+                    } else {
+                        if (progressInterval) {
+                            clearInterval(progressInterval);
+                            progressInterval = null;
+                        }
+                        if (p.total > 0 && p.current > 0) {
+                            fill.style.width = '100%';
+                            status.innerHTML = `✅ 掃描任務已完成！累計處理 ${p.current}/${p.total} 檔標的 (✨ 推薦: ${p.strong_buy_count} 檔)`;
+                            stats.innerHTML = `總耗時 ${p.elapsed_seconds}s`;
+                            await fetchResults();
+                            setTimeout(() => {
+                                if (card) card.style.display = 'none';
+                            }, 5000);
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                }
+            } catch (e) {
+                console.error('進度輪詢異常:', e);
+            }
+        }
+
+        async function stopScan() {
+            if (!confirm('確定要中止進行中的背景掃描任務嗎？')) return;
+            try {
+                const res = await fetch('/api/scan_stop', { method: 'POST' });
+                const data = await res.json();
+                if (data.success) {
+                    document.getElementById('scanProgressStatus').innerHTML = `🛑 ${data.message}`;
+                }
+            } catch (e) {
+                alert('中止失敗: ' + e);
+            }
+        }
+
+        async function triggerBatchScanWithLimit(mode, limit = null) {
+            try {
+                const payload = { mode: mode };
+                if (limit !== null && limit !== undefined) {
+                    payload.limit = parseInt(limit);
+                }
+                const res = await fetch('/api/scan_batch', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (data.success) {
+                    startProgressPolling();
+                } else {
+                    alert('啟動失敗: ' + (data.error || '未知原因'));
+                }
+            } catch (e) {
+                alert('啟動批次失敗: ' + e);
+            }
+        }
+
+        function triggerBatchScan(mode) {
+            return triggerBatchScanWithLimit(mode, null);
+        }
+
+        function triggerCustomLimitScan() {
+            const input = document.getElementById('customLimitInput');
+            const val = parseInt(input.value);
+            if (!val || val <= 0) {
+                alert('請在輸入框中填寫大於 0 的欲掃描檔數 (例如 50、80、150)');
+                input.focus();
+                return;
+            }
+            triggerBatchScanWithLimit('watchlist_all', val);
+        }
+
+        async function loadTopGainers() {
+            try {
+                const res = await fetch('/api/top_gainers');
+                const data = await res.json();
+                if (data.success) {
+                    const ids = data.stocks.map(s => s.stock_id);
+                    await fetch('/api/scan_batch', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ stocks: ids })
+                    });
+                    alert('📈 已成功將強勢股 ' + ids.join(', ') + ' 加入即時分析排程！');
+                }
+            } catch (e) {
+                alert('載入漲幅榜失敗: ' + e);
+            }
+        }
+
+        function openNews(stockId) {
+            const stock = allStocks.find(s => s.stock_id === stockId);
+            if (!stock || !stock.news || !stock.news.news_list) return;
+
+            document.getElementById('modalStockTitle').innerText = '📰 【' + stock.stock_id + ' ' + (stock.stock_name || '') + '】 即時新聞情報 (' + (stock.news.sentiment_label || '') + ')';
+            const newsContainer = document.getElementById('modalNewsContent');
+
+            if (stock.news.news_list.length === 0) {
+                newsContainer.innerHTML = '<div style="color: #94a3b8; padding: 20px; text-align: center;">近期無相關重大新聞公告</div>';
+            } else {
+                newsContainer.innerHTML = stock.news.news_list.map(n => 
+                    '<div class="news-item">' +
+                        '<a href="' + n.link + '" target="_blank" rel="noopener noreferrer" class="news-title">' + n.title + '</a>' +
+                        '<div class="news-meta">' +
+                            '<span>📰 ' + n.source + '</span>' +
+                            '<span>⏱️ ' + n.date + '</span>' +
+                        '</div>' +
+                    '</div>'
+                ).join('');
+            }
+
+            document.getElementById('newsModal').classList.add('active');
+        }
+
+        function closeModal(e) {
+            if (e.target.id === 'newsModal') {
+                document.getElementById('newsModal').classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

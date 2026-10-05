@@ -1,0 +1,1805 @@
+[
+  {
+    "stock_id": "2408",
+    "stock_name": "南亞科",
+    "sector": "上市股票",
+    "main_business": "電子零組件製造業 國際貿易業 其他顧問服務業",
+    "fund_ok": true,
+    "fundamental": {
+      "revenue_yoy": 576.62,
+      "revenue_month": "2026/09",
+      "eps": 14.66,
+      "eps_quarter": "2026 Q2",
+      "is_fallback": false
+    },
+    "tech": {
+      "close": 530.0,
+      "bb_upper": 544.55,
+      "bb_mid": 507.5,
+      "bb_lower": 470.45,
+      "bb_bandwidth": 14.6,
+      "is_bb_compressed": false,
+      "is_bb_breakout": false,
+      "macd_hist": 1.37,
+      "macd_turned_positive": false,
+      "macd_bullish": true,
+      "sma5": 520.0,
+      "sma20": 507.5,
+      "sma60": 477.07,
+      "trend_pattern": "🔥 極強多頭排列 (K > 5MA > 20MA > 60MA)",
+      "signal_type": "☕ 持股觀望",
+      "beauty_score": 68.1,
+      "beauty_status": "WATCHLIST",
+      "beauty_data_quality": "PASS",
+      "beauty_trading_days": 242,
+      "beauty_components": {
+        "trend": 25.0,
+        "stair_step": 12.2,
+        "high_52w": 18.0,
+        "drawdown": 0.0,
+        "momentum": 11.9,
+        "volatility": 1.0
+      },
+      "beauty_reasons": [
+        "收盤站上 20 日線",
+        "20 日線高於 60 日線",
+        "60 日線高於 120 日線",
+        "一年期報酬為正",
+        "近期區塊低點多數墊高",
+        "收盤貼近 52 週高點",
+        "一年期最大回撤過深",
+        "中期與中長期動能同向向上",
+        "20 日年化波動明顯偏高"
+      ],
+      "breakout_52w_high": false,
+      "near_52w_high": true,
+      "beauty_metrics": {
+        "return_20d": 10.99,
+        "return_60d": 21.7,
+        "return_120d": 141.68,
+        "return_240d": 485.58,
+        "max_drawdown": -39.2,
+        "annual_volatility": 53.01,
+        "distance_to_52w_high": -2.39
+      },
+      "is_buy": false,
+      "is_sell": false,
+      "summary": "持股觀察中（🔥 極強多頭排列 (K > 5MA > 20MA > 60MA)）"
+    },
+    "chips": {
+      "foreign_net_5d": 25268.0,
+      "trust_net_5d": -1411.0,
+      "dealer_net_5d": 2090.0,
+      "total_net_5d": 25946.0,
+      "trust_consecutive_buy": false,
+      "foreign_status": "大幅加碼",
+      "trust_status": "中性",
+      "accumulation_ratio": 1.0,
+      "is_accumulating": true,
+      "block_price": null,
+      "block_shares": 0,
+      "chip_signals": [
+        "🟢 外資5日加碼 25268.0 張",
+        "🔥 法人連續加碼 (5日累計淨買 25946.0 張)"
+      ],
+      "status_summary": "🔥 大戶籌碼集中偏多",
+      "is_rechecked": false
+    },
+    "news": {
+      "sentiment_score": 2,
+      "sentiment_label": "🔥 題材偏多",
+      "news_list": [
+        {
+          "title": "南亞科增資海外子公司約600億元！累計注資近千億 原因曝光 - TVBS新聞網",
+          "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE4xX1FRUGpKN0lGR2FLdFFlS3dOeDZqdGxXc1M4dVdYZno3UkhObWVTeExqTU9QcXpSY25wRzlBQjFyLWZZZUFEd2V2THB3MzA?oc=5",
+          "source": "TVBS新聞網",
+          "date": "Sat, 03 Oct 2026"
+        },
+        {
+          "title": "南亞科9月、Q3營收再飆新高 單季營收首度衝破千億大關 - 自由財經",
+          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5TZWxyc3N3eEx0LWRDZ0ZyMTZQOGExc2doRFRfbTNYRF92OTZnd05PeGVBNDhoS3BiOUhnQ1BDSWlQemsxbzA3dERXZzIydEdKeW00RlpfdGlPTGlfUXNZ0gFkQVVfeXFMTTlCcGpCQ3V6U1c2eTdxcWViWl9VMlF2Qm1fRUY1Mk9jbTN1bzhha1MzZHIxOHBSSkI2cHFrUnVwd3pXbmltZTZBZHJCUkxUZTN6YWdETVVKTHBOVmpQU2Y1Z181Tg?oc=5",
+          "source": "自由財經",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "南亞科今年前3季營收破2652億元 年增627％ - Yahoo股市",
+          "link": "https://news.google.com/rss/articles/CBMimwJBVV95cUxPX1BsRnBCSlZBUDI2emJnTVJHd09aQXFCRl9pVGdjYU5lTm1KVmhiMEppS3F2clFtU3FycmFQNlVHeW5DRFJhUXphd0M1MmJNdUxRZ1h5eFdJMEJ4U0FfcjhiaXRkZEVJd2QtUjFLLXhRdWxmZDk3dVhURXI1SVlwY1NEQndTei1iMjZxLVBIcVFlcVg0Q0EzUS01UlRCUVg0UjRhYTFWYl8xekhVNEpZNGw4dUNuWWVwMXJCTVAyWFdyb0Y1SVBRS1hnOXdHcWNnUXdmbDlaNy14NXRXNENTTnloYUVEVVdNQXRqWHo3bVoxOEtXVldGOHlhVlJ4aEhyX1ozcmlKWDZFNVJIU2owRTQ5YWNmUDBXUjd3?oc=5",
+          "source": "Yahoo股市",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "南亞科9月營收出爐！首度突破450億元Q3營收突破千億元大關- 產業 - 工商時報",
+          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBTbzZFVmdWZlZfX1BrZkFHQWtJYkliZHQzdldHM1U3UWZTMi1YTTc5SDZXWDVGT1QxUV9pVDhPVmJQdVlBWHhHN0ZubDg1NjVoVTZkcjBIQ0E2OUE3VFU4?oc=5",
+          "source": "工商時報",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "2408 南亞科 - 營收公佈 南亞科 9月營收450億9108萬元，續創高，月... - 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBXN3NyenhZZlgxUGp0YVZ3YmVqLVg5MlJnNzNEaE9vc3JPckNPSG5KZzRBUnJiVmVGYkdSQXp4ekJuMklIZ3Y0dlJ0Z3kyMU9ob3YtTWpZU24?oc=5",
+          "source": "CMoney",
+          "date": "Mon, 05 Oct 2026"
+        }
+      ],
+      "positive_hits": [
+        "突破",
+        "創高"
+      ],
+      "negative_hits": []
+    },
+    "is_strong_buy": false,
+    "scan_time": "21:13:44",
+    "is_rechecked": false
+  },
+  {
+    "stock_id": "3467",
+    "stock_name": "台灣精材",
+    "sector": "上櫃股票",
+    "main_business": "半導體設備耗材",
+    "fund_ok": true,
+    "fundamental": {
+      "revenue_yoy": 49.81,
+      "revenue_month": "2026/08",
+      "eps": 0.5,
+      "eps_quarter": "2026 Q2",
+      "is_fallback": false
+    },
+    "tech": {
+      "close": 71.1,
+      "bb_upper": 91.96,
+      "bb_mid": 68.48,
+      "bb_lower": 45.0,
+      "bb_bandwidth": 68.56,
+      "is_bb_compressed": false,
+      "is_bb_breakout": false,
+      "macd_hist": -0.73,
+      "macd_turned_positive": false,
+      "macd_bullish": false,
+      "sma5": 73.04,
+      "sma20": 68.48,
+      "sma60": 55.13,
+      "trend_pattern": "📈 短多格局 (站穩月線，5MA大於20MA)",
+      "signal_type": "☕ 持股觀望",
+      "beauty_score": 50.2,
+      "beauty_status": "LOW",
+      "beauty_data_quality": "PASS",
+      "beauty_trading_days": 242,
+      "beauty_components": {
+        "trend": 18.8,
+        "stair_step": 11.9,
+        "high_52w": 7.0,
+        "drawdown": 0.0,
+        "momentum": 12.6,
+        "volatility": 0.0
+      },
+      "beauty_reasons": [
+        "收盤站上 20 日線",
+        "20 日線高於 60 日線",
+        "一年期報酬為正",
+        "近期區塊低點多數墊高",
+        "距離 52 週高點 25% 內",
+        "一年期最大回撤過深",
+        "中期與中長期動能同向向上",
+        "20 日年化波動過高"
+      ],
+      "breakout_52w_high": false,
+      "near_52w_high": false,
+      "beauty_metrics": {
+        "return_20d": 37.26,
+        "return_60d": 21.96,
+        "return_120d": 44.58,
+        "return_240d": 66.77,
+        "max_drawdown": -43.65,
+        "annual_volatility": 81.6,
+        "distance_to_52w_high": -17.8
+      },
+      "is_buy": false,
+      "is_sell": false,
+      "summary": "持股觀察中（📈 短多格局 (站穩月線，5MA大於20MA)）"
+    },
+    "chips": {
+      "foreign_net_5d": -20.0,
+      "trust_net_5d": 0.0,
+      "dealer_net_5d": -15.0,
+      "total_net_5d": -35.0,
+      "trust_consecutive_buy": false,
+      "foreign_status": "中性",
+      "trust_status": "中性",
+      "accumulation_ratio": 1.0,
+      "is_accumulating": false,
+      "block_price": null,
+      "block_shares": 0,
+      "chip_signals": [],
+      "status_summary": "⚪ 籌碼面溫和中性",
+      "is_rechecked": false
+    },
+    "news": {
+      "sentiment_score": 1,
+      "sentiment_label": "⚪ 題材平穩",
+      "news_list": [
+        {
+          "title": "台灣精材（3467）做什麼？半年 EPS 超越去年，業務技術解析 - pocket.tw",
+          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9xSVF3WGttV3dKZEt5c0RuQklXd25GN21Hd0M0b3llc2lra25BRGZKQmM0QkV5T2pIWDdaTlhYaTVBUjlPMFFPUkVGeFpabEZEUlBmQ3k3WlRYTldx?oc=5",
+          "source": "pocket.tw",
+          "date": "Mon, 14 Sep 2026"
+        },
+        {
+          "title": "盤中速報 - 台灣精材(3467)股價殺至跌停，跌停價73.4元，成交599張 - TradingView",
+          "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9tS28xQ2pTdUZPQkZOTVlKOXh0a3hkbXVNOEZZVUpVZjRBS0NKUHlmS3BMdERJckZmaHhyODZScWxkX0c3RXZTaFVpN2NEbEM3SktTNzhuV1JmZXJCV1AxWk5vblY?oc=5",
+          "source": "TradingView",
+          "date": "Tue, 29 Sep 2026"
+        },
+        {
+          "title": "【11:24 即時新聞】台灣精材(3467)股價走強，延續中小型半導體設備題材熱度 - CMoney投資網誌",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNdmpBek9Bdlp0NFptRWY2Xy1ra01yN2pyWGtGc2RTZlJCTkJJUEMtYW5sMndIaV9qZzU3MkRZZmEtY3VpYzI2Z0E2bGdPdWl2b3BCVVRjSTJRUDYwR3U1V2ZpUnlndXNPcGQtZXpVaUxDSDdaWkVBZDJvS0VDbm9kdkNHNTVBSC1LNzZ4TFN3?oc=5",
+          "source": "CMoney投資網誌",
+          "date": "Tue, 22 Sep 2026"
+        },
+        {
+          "title": "3467 台灣精材- 法說會都有說，台灣精材是國際半導體設備巨頭應用材料、東京威力... - 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1md0xGbFdqZXN2YTNCTm8zS19Yc2lBZTZBQlp5V1BremlKNk03NzN6c21oQ2QwNlNrbzRsbnVTMHZ2eENvaTZoTm52WktVMzVRWG1HUGUzTkM?oc=5",
+          "source": "CMoney",
+          "date": "Tue, 14 Apr 2026"
+        },
+        {
+          "title": "台灣精材(3467)連2日漲停！8月營收創高，半導體精密陶瓷開始放量？ - news.cnyes.com",
+          "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9rLXhSN3drSnVMQjhWamNFOTI1aVpSS3FUbGNIRi1Ebm5mSVJhS2oxSUVuZ1U2MzVxLTB6VTNBWGhlWThWWEdqTGFhNkhUbGc?oc=5",
+          "source": "news.cnyes.com",
+          "date": "Mon, 14 Sep 2026"
+        }
+      ],
+      "positive_hits": [
+        "漲停",
+        "創高"
+      ],
+      "negative_hits": [
+        "跌停"
+      ]
+    },
+    "is_strong_buy": false,
+    "scan_time": "21:13:44",
+    "is_rechecked": false
+  },
+  {
+    "stock_id": "2454",
+    "stock_name": "聯發科",
+    "sector": "上市股票",
+    "main_business": "多媒體IC 、電腦週邊IC、高階消費性IC、其他特殊應用IC",
+    "fund_ok": true,
+    "fundamental": {
+      "revenue_yoy": 44.08,
+      "revenue_month": "2026/08",
+      "eps": 15.28,
+      "eps_quarter": "2026 Q2",
+      "is_fallback": false
+    },
+    "tech": {
+      "close": 5165.0,
+      "bb_upper": 5347.92,
+      "bb_mid": 4806.5,
+      "bb_lower": 4265.08,
+      "bb_bandwidth": 22.53,
+      "is_bb_compressed": false,
+      "is_bb_breakout": false,
+      "macd_hist": 1.2,
+      "macd_turned_positive": true,
+      "macd_bullish": true,
+      "sma5": 4985.0,
+      "sma20": 4806.5,
+      "sma60": 4153.58,
+      "trend_pattern": "🔥 極強多頭排列 (K > 5MA > 20MA > 60MA)",
+      "signal_type": "✨ 強烈買進",
+      "beauty_score": 69.4,
+      "beauty_status": "WATCHLIST",
+      "beauty_data_quality": "PASS",
+      "beauty_trading_days": 242,
+      "beauty_components": {
+        "trend": 25.0,
+        "stair_step": 12.6,
+        "high_52w": 18.0,
+        "drawdown": 0.0,
+        "momentum": 12.8,
+        "volatility": 1.0
+      },
+      "beauty_reasons": [
+        "收盤站上 20 日線",
+        "20 日線高於 60 日線",
+        "60 日線高於 120 日線",
+        "一年期報酬為正",
+        "近期區塊高點多數墊高",
+        "收盤貼近 52 週高點",
+        "一年期最大回撤過深",
+        "中期與中長期動能同向向上",
+        "20 日年化波動明顯偏高"
+      ],
+      "breakout_52w_high": false,
+      "near_52w_high": true,
+      "beauty_metrics": {
+        "return_20d": 19.01,
+        "return_60d": 31.59,
+        "return_120d": 202.08,
+        "return_240d": 296.75,
+        "max_drawdown": -31.71,
+        "annual_volatility": 54.77,
+        "distance_to_52w_high": -2.27
+      },
+      "is_buy": true,
+      "is_sell": false,
+      "summary": "✨ 買進觸發：MACD柱狀圖翻正、站穩月線(4806.5)"
+    },
+    "chips": {
+      "foreign_net_5d": -6402.0,
+      "trust_net_5d": 291.0,
+      "dealer_net_5d": 170.0,
+      "total_net_5d": -5941.0,
+      "trust_consecutive_buy": false,
+      "foreign_status": "調節賣超",
+      "trust_status": "加碼進駐",
+      "accumulation_ratio": 1.0,
+      "is_accumulating": false,
+      "block_price": null,
+      "block_shares": 0,
+      "chip_signals": [
+        "🔴 外資5日調節 -6402.0 張",
+        "🟢 投信5日買超 291.0 張"
+      ],
+      "status_summary": "⚠️ 大戶調節偏空",
+      "is_rechecked": false
+    },
+    "news": {
+      "sentiment_score": 0,
+      "sentiment_label": "⚪ 題材平穩",
+      "news_list": [
+        {
+          "title": "2454 聯發科 - 輝達勳哥投資發哥1千億- 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9sTkxFRlB6WG0zdHA1YjZ6dklkZEZOTGFDQnpJVktLWV9SVWREcVVtVHlzY3lkOFZuWTdiMnN5WHJyaGFKZktKNE1qdUpneUM2QUN6UFJrVDU?oc=5",
+          "source": "CMoney",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "聯發科股價回血站回5000元！最新目標價喊到6字頭，外資追高底氣在哪？股價催化劑曝光 - 今周刊",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPWGUxdTNXYkZ0a0Q3SXgyQ0lHemtUdkh1bFpybDFKeWtMREhuX2pYb1JNOGxvd2pMMU9oR3lVNlNFa3lOM2hMN1pJbnBHNnRBUDEzczRYbDl5N2NlMjdibm9GVHNkeTl4eXBBYWFmX3FVQUsyZUU5ZUZxcDlaeEZsdQ?oc=5",
+          "source": "今周刊",
+          "date": "Wed, 30 Sep 2026"
+        },
+        {
+          "title": "【零股排行榜】盤中零股成交量TOP 20｜0050 元大台灣50、009816 凱基台灣TOP50、00406A 主動中信台灣收益、2454 聯發科、2327 國巨* (0929)｜豐雲學堂2026 年 10 月 - sinotrade.com.tw",
+          "link": "https://news.google.com/rss/articles/CBMi2gRBVV95cUxQX294bXotMUR6Z2RDNlhDWGltY09yLXRNaUFiTEZGeEt5bVp4U3daa2pFYmZjN092a1djNmlEdHJOZjR4UXRzZ2JOWVpDVXlMR2NkS3ROY3dtN0wxVlJJdkpGRjlzMUhZTVhldnczUUpiSTRHbm1yQ1FxVS0wTGdFbGt2d2hld2xqdFY0MmVET21oV0R5eExiWjBISlBLLVN6Q2FPcTFTdi1hMkVkWGpNYlcwdFVJRHlwd2VjU2NxTmpjaG83Z29fYzBwSVVxQjJ5bzdYbUZSR056SkxKNDlPd1ozY3NNMk1ZOTlVZmRqNFBOS0JNZHlSSVBpbjRTVzRsbmxHZXNCaVVzVS1ZTk11RGxyTUhlY2lqc0ktYURTX0RjdHh3NllXQU9YUTQzNWMtNVh1bHRENWlhYnppVExsMUtZTWxyS0RwWjFCSDB5anlHdXY5QWNPZWZaVi1Qb0M3b1B3b19LRnpMLWo2SWI3QkE1MWRNdThUTms3dDRIcFdCaEoyZW5QZnlUVTliUWZJVmZtY2pNelpieERHS1RkYXNjNXluX05WNEhaQnljTFpkbnhSYU5LbWl1d1g5YmdwQm5aOEplcEozTS1DSGt5a1F6TFMxbG5lajMtbHozXzRmbm90anZlRzFMUUFUTTZOUHQ0eXdnMDhzQTcwVlFOeG9yQ1gtY1lMaXBlS0JaMlBhTEtIaHo4bnNhMFgyVEJ2bFlxTTU1NFFFbUd4U0YxVzA2MmtPekR6RzFZQVM3QzFOZlpkX2FudkJJZ3hFRDRiRVRFeFFCZjQ4Zw?oc=5",
+          "source": "sinotrade.com.tw",
+          "date": "Fri, 02 Oct 2026"
+        },
+        {
+          "title": "聯發科攜達發搶AI連網商機三大平台齊升級- 產業 - 工商時報",
+          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1jb2VfN0ZFVkowMHpDSVppQzlDa29HaFdFTHU0VGhBTjVydDF3Z2lpbXZvVUMtRHN1Z1BYVXN6azBhZ0xTSkVrcTBsWmgxdmpIRmpzZ25xY29VMHc3RmNB?oc=5",
+          "source": "工商時報",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "聯發科集團秀AI網路布局，秀三大新一代連網技術| MoneyDJ理財網 - LINE TODAY",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5CY0hxVUZ4c0tqYU1zVnBYc1Z5eTFtOFBhOER2T1ZYM2VPS1U2cXJoTmV0NUxJN0dNcVJqWl9uQkg1X2s1MnlBQzNwWjhHdDVLYUVlV1ln?oc=5",
+          "source": "LINE TODAY",
+          "date": "Mon, 05 Oct 2026"
+        }
+      ],
+      "positive_hits": [],
+      "negative_hits": []
+    },
+    "is_strong_buy": false,
+    "scan_time": "21:13:44",
+    "is_rechecked": false
+  },
+  {
+    "stock_id": "2330",
+    "stock_name": "台積電",
+    "sector": "上市股票",
+    "main_business": "依客戶之訂單與其提供之產品設計說明，以從事製造與銷售積體電路 以及其他晶圓半導體裝置。提供前述產品之封裝與測試服務、積體電 路之電腦輔助設計技術服務。提供製造光罩及其設計服務。",
+    "fund_ok": true,
+    "fundamental": {
+      "revenue_yoy": 53.32,
+      "revenue_month": "2026/08",
+      "eps": 27.25,
+      "eps_quarter": "2026 Q2",
+      "is_fallback": false
+    },
+    "tech": {
+      "close": 2575.0,
+      "bb_upper": 2555.58,
+      "bb_mid": 2454.65,
+      "bb_lower": 2353.71,
+      "bb_bandwidth": 8.22,
+      "is_bb_compressed": true,
+      "is_bb_breakout": true,
+      "macd_hist": 9.78,
+      "macd_turned_positive": false,
+      "macd_bullish": true,
+      "sma5": 2508.0,
+      "sma20": 2454.65,
+      "sma60": 2400.64,
+      "trend_pattern": "🔥 極強多頭排列 (K > 5MA > 20MA > 60MA)",
+      "signal_type": "✨ 強烈買進",
+      "beauty_score": 82.2,
+      "beauty_status": "HIGH",
+      "beauty_data_quality": "PASS",
+      "beauty_trading_days": 242,
+      "beauty_components": {
+        "trend": 25.0,
+        "stair_step": 12.6,
+        "high_52w": 20.0,
+        "drawdown": 11.0,
+        "momentum": 9.7,
+        "volatility": 4.0
+      },
+      "beauty_reasons": [
+        "收盤站上 20 日線",
+        "20 日線高於 60 日線",
+        "60 日線高於 120 日線",
+        "一年期報酬為正",
+        "近期區塊低點多數墊高",
+        "收盤突破前 240 日高點",
+        "一年期最大回撤小於 15%",
+        "中期與中長期動能同向向上",
+        "20 日年化波動低於 25%"
+      ],
+      "breakout_52w_high": true,
+      "near_52w_high": true,
+      "beauty_metrics": {
+        "return_20d": 8.06,
+        "return_60d": 6.94,
+        "return_120d": 26.01,
+        "return_240d": 84.21,
+        "max_drawdown": -12.37,
+        "annual_volatility": 19.27,
+        "distance_to_52w_high": 2.59
+      },
+      "is_buy": true,
+      "is_sell": false,
+      "summary": "✨ 買進觸發：MACD紅柱擴張、強勢挑戰/穿透布林上軌(2555.58)、布林帶寬高度壓縮(8.22%)蓄勢中、站穩月線(2454.65)"
+    },
+    "chips": {
+      "foreign_net_5d": 3915.0,
+      "trust_net_5d": 2680.0,
+      "dealer_net_5d": 1929.0,
+      "total_net_5d": 8522.0,
+      "trust_consecutive_buy": true,
+      "foreign_status": "大幅加碼",
+      "trust_status": "加碼進駐",
+      "accumulation_ratio": 1.0,
+      "is_accumulating": true,
+      "block_price": null,
+      "block_shares": 0,
+      "chip_signals": [
+        "🟢 投信連買作帳吸籌中",
+        "🟢 外資5日加碼 3915.0 張",
+        "🟢 投信5日買超 2680.0 張",
+        "🔥 法人連續加碼 (5日累計淨買 8522.0 張)"
+      ],
+      "status_summary": "🔥 大戶籌碼集中偏多",
+      "is_rechecked": false
+    },
+    "news": {
+      "sentiment_score": 0,
+      "sentiment_label": "⚪ 題材平穩",
+      "news_list": [
+        {
+          "title": "三大法人買賣超 – 外資買超(2330)台積電、(2308)台達電，投信買超(3081)聯亞、(2327)國巨*，法人合計買超764.5億元 - sinotrade.com.tw",
+          "link": "https://news.google.com/rss/articles/CBMi0wRBVV95cUxNdDRQWlNmcTAwdFdJeXAxQzcwMjRSX0c1dk55WmxLbEhhYi1leURZc2hfbExXQmE5VGllSVh4Q0d1cEpVajV4MFBiLUdmbkcxSnlmTHh2UkJTcDBEYS03UGZLbmtRVEwtOVhsUXZWOFZzTU9iS0dJSVJLbk5xX1RmcmlhX2tFVXBmU0daY0d1ZTJyblVEOVV4VXRSUDhWUWFWcFE1OGlLdU9qRGg3eXIyNTZYOWRvOWVSUDZtMnZHSkpxUUxCc1BVNUpSbUtET0tUaG0zM2RFZlFkWUtVazdpX0tOMExqYWVuNU4xRm9ZSzMzMWlrWHJtTGZNOUNyR3RnMHNUUFhhTE9SUUh0NF94eFE1b0RpLWtDNkhuQ3dwN3FUMUlGYlo3SU5rTEI1V2t3V2NyZGxORmdFRDVJSWhMc1RGNTdOZldwcWtPcm1feHQ1NTBac0ZhZm5UMDk1N3RKT1pRNlJIcHhJaTdpTmRneS1WTTZTb2kyVFRjdWt1UXFpcXZjZDB4MUlaYWF3MEx0SE9BMzV2TmxBQ2RvMG15TFdzamJoNEZscnU2UHZVekNaZEt0NmxudlFxa1FXaHV0SjY2SnJMcDRWdms3UkxEWTNuUzhxNGlUdDI4RVlEN2hwNEswSkh1RXdmTnNHX1Npc3ZwRGNNT3gtMmY5eHJ1cUhReTRoVkFBbTktU19IRy12NWJkTTd1eHNsY1JycjdSWEc4cHZmM1NEd3hlTEQ0eFRlWmcwY2hiM3JtNU9NWUcwOGFKNHRXcVdmY3hmU3lZM0sw?oc=5",
+          "source": "sinotrade.com.tw",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "【台積電飆天價】一年暴增140萬股東！堅持抱緊「1張賺破百萬元」 - Yahoo股市",
+          "link": "https://news.google.com/rss/articles/CBMisANBVV95cUxNbHdiYVdFLTFOS3VZbHUwd0RYUl9Vem9vU1JaM0RENzlxVzRlSUpvTF9Eems1SEpubnowUWo3ZnhHRHZDaktjZUdpM3VIS2VZTFVab3VlSXlwRWQ1OXR3SUpwSDdpMUNBTG8xNmZkSldlNjd6dmpLdmpFbGJzbnpRSHFpV3lOY1M0dWNDOFA2TXlOQi1XSjhFWmdfQzFVY2VUVWV0M0prczBBTzFjWjNaWUJMdjgydmU0RHBMYmxXd0FySlFuUkcycXUyZkVSUG1HdXI0VXI3NmpRdzlDZWRhOEdUa0RQTkhFUjExMW1ZNWVmOEI1TkVVYURtUzVTQWN0d1dwMlI1YTJJSnQ2aWRzcFRGa0gzVWk1aDN2SmhpVkN6UGs1aTZrckpGWnlCWjVOc0RsT2dROEE1aVd3X3dzX1ZmV1VrekptU3BWVHJwTU81eEhIcUJpQ2kweDFibUg4MEJ5RW9Zek5wQTZwTUVKY2FfcDdCc1k5WXpLZ1o4VFRXVXlzWks5XzNwUWZfeXkwNjY5a0FlV0k4bllMRXdnVk5MLXRvNm0tSUhhTFVPZEE?oc=5",
+          "source": "Yahoo股市",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "2330 台積電 - 台積電評估與Terafab合作晶圓廠？馬斯克親自回應- 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9TZDNWOVNQS1o5QmhWWHpYeGdoUHVGV3pjcHZQU2R3YmJDSUc5VHI0SVZtM0piM2Z3aU1hOUtPOHY3UEVIWlNhY2h1NUF3b0VJU1ZfektBdEc?oc=5",
+          "source": "CMoney",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "2330 台積電 - 預期台積電與特斯拉Terafab 有兩種合作方案，成 15 日線上法說會關注焦點- 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE0tNk02Z2wxNGhOTVhJOHRlcmg0Mm14NGM2Tzg4aTFKNzVUQy15X0V4eENjNFFkZ0Nkc20xZlJ2d2NqdF9LVGJWMzB4MzQzQmR0UHA0WUN2T0M?oc=5",
+          "source": "CMoney",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "2330 台積電 - 10/5收盤 中砂上漲收在1040塊 台積電上漲收在2575... - 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1nVjhiaXBXdW4yRXlzWGxaZlJSbU9oVTJ1NGlPNzNGYTJTQVhJS3NfYWhwcl9BX0JST2JhNG8tRVB5UWh1M1RVU1phS0VGY3hZWDQwNVpiTEc?oc=5",
+          "source": "CMoney",
+          "date": "Mon, 05 Oct 2026"
+        }
+      ],
+      "positive_hits": [
+        "買超"
+      ],
+      "negative_hits": [
+        "賣超"
+      ]
+    },
+    "is_strong_buy": true,
+    "scan_time": "21:13:44",
+    "is_rechecked": false
+  },
+  {
+    "stock_id": "3034",
+    "stock_name": "聯詠",
+    "sector": "上市股票",
+    "main_business": "研究.開發.設計.生產.製造.銷售下列產品:A語音積體電路及系統B通 訊積體電路及系統C內崁式微控制器及系統D數位訊號處理器及系統 E電腦週邊控制積體電路及系統F液晶顯示器驅動積體電路及系統",
+    "fund_ok": true,
+    "fundamental": {
+      "revenue_yoy": 26.33,
+      "revenue_month": "2026/08",
+      "eps": 10.4,
+      "eps_quarter": "2026 Q2",
+      "is_fallback": false
+    },
+    "tech": {
+      "close": 543.0,
+      "bb_upper": 559.95,
+      "bb_mid": 544.35,
+      "bb_lower": 528.75,
+      "bb_bandwidth": 5.73,
+      "is_bb_compressed": true,
+      "is_bb_breakout": false,
+      "macd_hist": -1.69,
+      "macd_turned_positive": false,
+      "macd_bullish": false,
+      "sma5": 542.6,
+      "sma20": 544.35,
+      "sma60": 526.28,
+      "trend_pattern": "⚠️ 弱勢破線 (收盤跌破20日線)",
+      "signal_type": "🛑 風險警告",
+      "beauty_score": 69.8,
+      "beauty_status": "WATCHLIST",
+      "beauty_data_quality": "PASS",
+      "beauty_trading_days": 242,
+      "beauty_components": {
+        "trend": 18.8,
+        "stair_step": 12.4,
+        "high_52w": 18.0,
+        "drawdown": 8.0,
+        "momentum": 9.6,
+        "volatility": 3.0
+      },
+      "beauty_reasons": [
+        "20 日線高於 60 日線",
+        "60 日線高於 120 日線",
+        "一年期報酬為正",
+        "近期區塊低點多數墊高",
+        "收盤貼近 52 週高點",
+        "一年期最大回撤小於 20%",
+        "中期與中長期動能同向向上",
+        "20 日年化波動低於 35%"
+      ],
+      "breakout_52w_high": false,
+      "near_52w_high": true,
+      "beauty_metrics": {
+        "return_20d": 3.04,
+        "return_60d": 4.62,
+        "return_120d": 42.3,
+        "return_240d": 33.43,
+        "max_drawdown": -15.64,
+        "annual_volatility": 25.22,
+        "distance_to_52w_high": -2.69
+      },
+      "is_buy": false,
+      "is_sell": true,
+      "summary": "🛑 賣出警戒：跌破月線支撐(544.35)"
+    },
+    "chips": {
+      "foreign_net_5d": 2473.0,
+      "trust_net_5d": 174.0,
+      "dealer_net_5d": 259.0,
+      "total_net_5d": 2906.0,
+      "trust_consecutive_buy": true,
+      "foreign_status": "大幅加碼",
+      "trust_status": "加碼進駐",
+      "accumulation_ratio": 1.0,
+      "is_accumulating": true,
+      "block_price": null,
+      "block_shares": 0,
+      "chip_signals": [
+        "🟢 投信連買作帳吸籌中",
+        "🟢 外資5日加碼 2473.0 張",
+        "🟢 投信5日買超 174.0 張",
+        "🔥 法人連續加碼 (5日累計淨買 2906.0 張)"
+      ],
+      "status_summary": "🔥 大戶籌碼集中偏多",
+      "is_rechecked": false
+    },
+    "news": {
+      "sentiment_score": 0,
+      "sentiment_label": "⚪ 題材平穩",
+      "news_list": [
+        {
+          "title": "3034 聯詠- 我被割韭菜了- 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9TVWM3bzZ3enNqcTh0MzM1c2Rfc0JZeDdSWlNZbU40bkJLWF9qcWtJbVM0bXlpUENlUURfQUZtRk9XYW1qWVZHbnliSFY1V3kzT0RELWdRVFc?oc=5",
+          "source": "CMoney",
+          "date": "Fri, 02 Oct 2026"
+        },
+        {
+          "title": "營收速報 - 聯詠(3034)8月營收103.27億元年增率高達26.33％｜新聞快訊｜豐雲學堂 - sinotrade.com.tw",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5xdUh4Y3ZVUkdMRVB4c01EallwTE9rUXR6WDdKU0lza0hZdDFJZFpQOXg1c0RCRFFKb2NWVTZEN0tpdnV0eXFYaUZJNnJsRWFsOXNiU2tXTU95ajNQRXVTdndzdmczWjlJM3JBVmhFOXJjU1VmZkE?oc=5",
+          "source": "sinotrade.com.tw",
+          "date": "Mon, 07 Sep 2026"
+        },
+        {
+          "title": "瑞昱、聯詠啖AI 電力強- 日報 - 工商時報",
+          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9ldkMxM2NYS3ljeXhTVGtHZlRSWEVNN0ZoWWE2ZmF6bmhqRGZJTlFYd3QtZlhoR21JM0JlbmhKWDdiSlZ6VmRPNlYzQk53cUxGQXplS1Zsc2ZGOG9QdHRR?oc=5",
+          "source": "工商時報",
+          "date": "Mon, 14 Sep 2026"
+        },
+        {
+          "title": "Q2營收季增看衝23%！聯詠(3034)三大產品線齊發 4月營收轉正 - 理財周刊",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9hb280dmkxeVM5dDBsTXVhVDNEWnY5eE1XdDhIdVo2UmlDdWhjc2pNZ3IwRUN2WVBzOHlVVHpCeEhDX0gyTEFTSkNvQURCdmdYZGpwbGtLWDE4XzBybzlPXzA3LUFLMlBua0JORjE1UQ?oc=5",
+          "source": "理財周刊",
+          "date": "Fri, 08 May 2026"
+        },
+        {
+          "title": "【聯詠法說會重點內容備忘錄】未來展望趨勢 20260507 - 富果直送",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE90RUtIcmNHNkdnMzJ3b01qREExWEdHQ01wTFk0WVFzVkFweDc5MmVlOEV0RmRHazgyQTIxRzFoblRHb0pCakZUNTVjWXpHeGt6eXVNMERSdmc1RnJiOVJwdVNwQlFlOFU?oc=5",
+          "source": "富果直送",
+          "date": "Thu, 07 May 2026"
+        }
+      ],
+      "positive_hits": [],
+      "negative_hits": []
+    },
+    "is_strong_buy": false,
+    "scan_time": "21:13:54",
+    "is_rechecked": false
+  },
+  {
+    "stock_id": "2379",
+    "stock_name": "瑞昱",
+    "sector": "上市股票",
+    "main_business": "研究開發生產、製造、銷售各種積體電路",
+    "fund_ok": true,
+    "fundamental": {
+      "revenue_yoy": 28.08,
+      "revenue_month": "2026/08",
+      "eps": 7.42,
+      "eps_quarter": "2026 Q2",
+      "is_fallback": false
+    },
+    "tech": {
+      "close": 755.0,
+      "bb_upper": 781.79,
+      "bb_mid": 728.18,
+      "bb_lower": 674.57,
+      "bb_bandwidth": 14.73,
+      "is_bb_compressed": false,
+      "is_bb_breakout": false,
+      "macd_hist": 3.11,
+      "macd_turned_positive": false,
+      "macd_bullish": true,
+      "sma5": 758.2,
+      "sma20": 728.18,
+      "sma60": 716.12,
+      "trend_pattern": "📈 短多格局 (站穩月線，5MA大於20MA)",
+      "signal_type": "☕ 持股觀望",
+      "beauty_score": 67.8,
+      "beauty_status": "WATCHLIST",
+      "beauty_data_quality": "PASS",
+      "beauty_trading_days": 242,
+      "beauty_components": {
+        "trend": 25.0,
+        "stair_step": 12.8,
+        "high_52w": 12.0,
+        "drawdown": 4.0,
+        "momentum": 10.0,
+        "volatility": 4.0
+      },
+      "beauty_reasons": [
+        "收盤站上 20 日線",
+        "20 日線高於 60 日線",
+        "60 日線高於 120 日線",
+        "一年期報酬為正",
+        "近期區塊低點多數墊高",
+        "距離 52 週高點 15% 內",
+        "一年期最大回撤小於 30%",
+        "20 日年化波動低於 25%"
+      ],
+      "breakout_52w_high": false,
+      "near_52w_high": false,
+      "beauty_metrics": {
+        "return_20d": 10.58,
+        "return_60d": -6.93,
+        "return_120d": 49.2,
+        "return_240d": 42.41,
+        "max_drawdown": -24.11,
+        "annual_volatility": 21.97,
+        "distance_to_52w_high": -13.13
+      },
+      "is_buy": false,
+      "is_sell": false,
+      "summary": "持股觀察中（📈 短多格局 (站穩月線，5MA大於20MA)）"
+    },
+    "chips": {
+      "foreign_net_5d": 1433.0,
+      "trust_net_5d": 782.0,
+      "dealer_net_5d": 104.0,
+      "total_net_5d": 2320.0,
+      "trust_consecutive_buy": true,
+      "foreign_status": "大幅加碼",
+      "trust_status": "加碼進駐",
+      "accumulation_ratio": 1.0,
+      "is_accumulating": true,
+      "block_price": null,
+      "block_shares": 0,
+      "chip_signals": [
+        "🟢 投信連買作帳吸籌中",
+        "🟢 外資5日加碼 1433.0 張",
+        "🟢 投信5日買超 782.0 張",
+        "🔥 法人連續加碼 (5日累計淨買 2320.0 張)"
+      ],
+      "status_summary": "🔥 大戶籌碼集中偏多",
+      "is_rechecked": false
+    },
+    "news": {
+      "sentiment_score": -1,
+      "sentiment_label": "⚠️ 題材偏空",
+      "news_list": [
+        {
+          "title": "Factset 最新調查：瑞昱(2379-TW)EPS預估下修至31.73元，預估目標價為730元｜新聞快訊｜豐雲學堂 - sinotrade.com.tw",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9GVERxTkxQcTU2Z1YxT1VEWjlqQ1lseldnNGFUNzZVelNSUGJaeDB0dkNneTZnc0pwanNDYWRwSFdzWGlST2xTX3dGOHhjRk9BVl9Fb2t1SWpGdVJydWNEeFJkZ0FCTllpUEJDaUQ5RVoyOXd6bkE?oc=5",
+          "source": "sinotrade.com.tw",
+          "date": "Tue, 25 Aug 2026"
+        },
+        {
+          "title": "台股大漲3000點，瑞昱(2379)卻獨跌近5%，第二季季減年減，但曙光在這裡 - 理財周刊",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9uVzJHT2hXaC1IVVlfRDlXZkVJSXpNdE1ydFRhYkRldkVNUFVVaTBxUlFzbmJFbGhxMEpsUFlFTTFyTS1NclJyX0E3dDhVX2w4VFp2dlFUR3h3WHZzVG94RmdVbEtwcTNsSXFTNy1rNA?oc=5",
+          "source": "理財周刊",
+          "date": "Fri, 31 Jul 2026"
+        },
+        {
+          "title": "瑞昱報捷 打入輝達鏈 - 經濟日報",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5rajFtRThyMW9rVm1QTTBkQTUyWkliQ2M4YzNiQm1vaVdwN0NhM2NHTFdvWnRfVTN1TG5hdkFnUHFoX0RDaHlDb1dMUWFGck9oR2NrWDhNUEx5Z9IBX0FVX3lxTE0ybGFoZ1g5Z2l1MGhIUFRvOGRtUjdkOHQzSkNwRm0tWWZsajJYaG1KY1lJaktEZVVMbGRDc3V5LVlvb3V3SEJBeS14U242MzN6SXZ4cUY3RE9iRzc1ZlNv?oc=5",
+          "source": "經濟日報",
+          "date": "Tue, 08 Sep 2026"
+        },
+        {
+          "title": "2379 瑞昱- 祥碩、瑞昱四檔有看頭- 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9DMUJ6bEtXQTNRb3BtUWs4TERHMUxTR0lydlVvcnlQdzVBWEh0SnN5ckpEZDVvWGE2TU4yMXhyeXNPejU5bUpqUnh3WGhzdUZCUmNQVU9ybkY?oc=5",
+          "source": "CMoney",
+          "date": "Wed, 19 Aug 2026"
+        },
+        {
+          "title": "瑞昱董事長邱順健曝正發展WiFi 9及ASIC業務 是否漲價這樣說 - Yahoo股市",
+          "link": "https://news.google.com/rss/articles/CBMi8gJBVV95cUxPVll1OFhBWl84S0ZUakZUa2UzWm1ad2hlUWxZQ3ZiN3hqYllZaUdLT05NaGZ3WVBlNmctMnNPdzlqRlZjU1A0YkJ4ZkJ1M1NsVC1lSWw3djl0VzJoVW90NnFkSnFGMURPRUZFWDBMMUhiZXJzSEZoQzVIZzJVZ0gwY3pnOXpnbWJUWi1hZ1ZhckpObFlfWGJfbUhMaFlqaW8yRlpoQlliOGxQYnRvTU43RGt2ZGR3Y2ZsZlJLeHFGM1lhMFNfVnJkQjBseG0yaThpOTlXMzRVYzlhWi1vM2dPeU45bU5SWm1CM1RKT2w3Nmh6aHhVbzJ5M2FmbUJwNTQxYzRJdk51WDcwaWVGSEdld2Y4bE9CcURRMHdxRjB3Q1JvSS1ER09ZdFRZc1NyaTBiMnRNQUVrUnh6c1dEU3FRRVVXX052SXpsdXhwMzlERjNKUnNGTXZJWnRiS3dhQU1EcEJLWlJwZlllcjBwWTMxTGZn?oc=5",
+          "source": "Yahoo股市",
+          "date": "Sun, 06 Sep 2026"
+        }
+      ],
+      "positive_hits": [],
+      "negative_hits": [
+        "下修"
+      ]
+    },
+    "is_strong_buy": false,
+    "scan_time": "21:13:55",
+    "is_rechecked": false
+  },
+  {
+    "stock_id": "5274",
+    "stock_name": "信驊",
+    "sector": "上櫃股票",
+    "main_business": "多媒體積體電路 電腦周邊積體電路 高階消費性電子積體電路",
+    "fund_ok": true,
+    "fundamental": {
+      "revenue_yoy": 100.93,
+      "revenue_month": "2026/09",
+      "eps": 44.27,
+      "eps_quarter": "2026 Q2",
+      "is_fallback": false
+    },
+    "tech": {
+      "close": 19520.0,
+      "bb_upper": 20740.82,
+      "bb_mid": 18939.75,
+      "bb_lower": 17138.68,
+      "bb_bandwidth": 19.02,
+      "is_bb_compressed": false,
+      "is_bb_breakout": false,
+      "macd_hist": -101.76,
+      "macd_turned_positive": false,
+      "macd_bullish": false,
+      "sma5": 19109.0,
+      "sma20": 18939.75,
+      "sma60": 16568.42,
+      "trend_pattern": "🔥 極強多頭排列 (K > 5MA > 20MA > 60MA)",
+      "signal_type": "☕ 持股觀望",
+      "beauty_score": 72.2,
+      "beauty_status": "WATCHLIST",
+      "beauty_data_quality": "PASS",
+      "beauty_trading_days": 242,
+      "beauty_components": {
+        "trend": 25.0,
+        "stair_step": 13.1,
+        "high_52w": 16.0,
+        "drawdown": 4.0,
+        "momentum": 13.1,
+        "volatility": 1.0
+      },
+      "beauty_reasons": [
+        "收盤站上 20 日線",
+        "20 日線高於 60 日線",
+        "60 日線高於 120 日線",
+        "一年期報酬為正",
+        "近期區塊高點多數墊高",
+        "近期區塊低點多數墊高",
+        "距離 52 週高點 8% 內",
+        "一年期最大回撤小於 30%",
+        "中期與中長期動能同向向上",
+        "20 日年化波動明顯偏高"
+      ],
+      "breakout_52w_high": false,
+      "near_52w_high": false,
+      "beauty_metrics": {
+        "return_20d": 9.36,
+        "return_60d": 42.85,
+        "return_120d": 65.87,
+        "return_240d": 282.47,
+        "max_drawdown": -25.98,
+        "annual_volatility": 59.55,
+        "distance_to_52w_high": -6.63
+      },
+      "is_buy": false,
+      "is_sell": false,
+      "summary": "持股觀察中（🔥 極強多頭排列 (K > 5MA > 20MA > 60MA)）"
+    },
+    "chips": {
+      "foreign_net_5d": -29.0,
+      "trust_net_5d": -40.0,
+      "dealer_net_5d": 11.0,
+      "total_net_5d": -59.0,
+      "trust_consecutive_buy": false,
+      "foreign_status": "中性",
+      "trust_status": "中性",
+      "accumulation_ratio": 1.0,
+      "is_accumulating": false,
+      "block_price": null,
+      "block_shares": 0,
+      "chip_signals": [],
+      "status_summary": "⚪ 籌碼面溫和中性",
+      "is_rechecked": false
+    },
+    "news": {
+      "sentiment_score": 0,
+      "sentiment_label": "⚪ 題材平穩",
+      "news_list": [
+        {
+          "title": "5274 信驊- 信驊9月營收月增0.6% - 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1Ec2VWSV90cUxOVzFQdGZJZER5TnpRVkx4aE9VWHlwYUt0WG93T3c4MVEtMFp3cG9zcm5CaGdxX2pIYWZaU09GdFc0dWFpY1czLWdBZlhDTk8?oc=5",
+          "source": "CMoney",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "營收速報 - 信驊(5274)9月營收16.36億元年增率高達100.93％｜新聞快訊｜豐雲學堂 - sinotrade.com.tw",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAzS2N3Y3FOdDhDdUt3SjlLOUs4bzFRT0dNR1FDb3Y3djNXQW1ZZ0ZDMDJFbFV3YUNicTNXMUxYV1FjU0EtUlVTcGplb0ctbHpCYWRnZHJNb2hIZ0s5N0gtTE1CbDQwYWNVUHBQeWFteldZQVJwd2c?oc=5",
+          "source": "sinotrade.com.tw",
+          "date": "Sun, 04 Oct 2026"
+        },
+        {
+          "title": "信驊9月營收月增0.6% - finance.technews.tw",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQZWhrSmVXUC12b2xVSlRfOHVXdmdDSkNYa3Iwcnd0SEFIV2tqWWRGTE9DS1pvVm01WXhfemZpV1JjOXJhWHRWcU83bGxISDBNLUtsMTdlNTg0NGowTmdPRXNSOTc0cTlzMEFFY2tGQ3ZXTE9MUXZnYXN6RVVLVlFsMg?oc=5",
+          "source": "finance.technews.tw",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "營收：信驊(5274)9月營收16億3632萬元續創新高，月增率0.63%，年增率100.93% - 富聯網",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOMkpOLS1FSm90OXp4bGpYTTI3LWFuSFpzN0lrbk5zTmpTT2d1OVMxcWctRHRMRVJrTTRkV2UweXJGcHZpSnNidFF0eWNpMFl2VlRBbE56YU9wRHhjSi15cUpYSzFPaGhCc1hGOFVyOW5FUDF3TFZrY2Q0V21yM091emM0SlNBZVdt?oc=5",
+          "source": "富聯網",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "信驊(5274)股票一張1700萬元一點都不貴？身家上億股市老手為何說：這檔9元股比股王「更貴」？關鍵差在哪？ - 今周刊",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNRzlSbUFDcnM3NllqSjhBcDE0M2Iwdk55U2ppWkcxRWNzd1NlbXdFR2hkczVWQVo3RkExc1pQVUJ6Qi1CRzlYNU9fSDltd2VGSWlJRU13bHBJU0FKUFViVXZISGFQRUM0c1lCMDlaS1hXTlhpdGo1dnBZTk9MLXl0Qw?oc=5",
+          "source": "今周刊",
+          "date": "Tue, 18 Aug 2026"
+        }
+      ],
+      "positive_hits": [],
+      "negative_hits": []
+    },
+    "is_strong_buy": false,
+    "scan_time": "21:13:54",
+    "is_rechecked": false
+  },
+  {
+    "stock_id": "4961",
+    "stock_name": "天鈺",
+    "sector": "上市股票",
+    "main_business": "積體電路設計業",
+    "fund_ok": true,
+    "fundamental": {
+      "revenue_yoy": 50.15,
+      "revenue_month": "2026/08",
+      "eps": 3.21,
+      "eps_quarter": "2026 Q2",
+      "is_fallback": false
+    },
+    "tech": {
+      "close": 184.0,
+      "bb_upper": 190.27,
+      "bb_mid": 178.5,
+      "bb_lower": 166.73,
+      "bb_bandwidth": 13.19,
+      "is_bb_compressed": false,
+      "is_bb_breakout": false,
+      "macd_hist": 0.13,
+      "macd_turned_positive": false,
+      "macd_bullish": true,
+      "sma5": 183.8,
+      "sma20": 178.5,
+      "sma60": 168.27,
+      "trend_pattern": "🔥 極強多頭排列 (K > 5MA > 20MA > 60MA)",
+      "signal_type": "☕ 持股觀望",
+      "beauty_score": 74.0,
+      "beauty_status": "WATCHLIST",
+      "beauty_data_quality": "PASS",
+      "beauty_trading_days": 242,
+      "beauty_components": {
+        "trend": 25.0,
+        "stair_step": 12.7,
+        "high_52w": 18.0,
+        "drawdown": 8.0,
+        "momentum": 8.3,
+        "volatility": 2.0
+      },
+      "beauty_reasons": [
+        "收盤站上 20 日線",
+        "20 日線高於 60 日線",
+        "60 日線高於 120 日線",
+        "一年期報酬為正",
+        "近期區塊高點多數墊高",
+        "近期區塊低點多數墊高",
+        "收盤貼近 52 週高點",
+        "一年期最大回撤小於 20%",
+        "中期與中長期動能同向向上",
+        "20 日年化波動偏高"
+      ],
+      "breakout_52w_high": false,
+      "near_52w_high": true,
+      "beauty_metrics": {
+        "return_20d": 10.84,
+        "return_60d": 4.55,
+        "return_120d": 26.16,
+        "return_240d": 14.56,
+        "max_drawdown": -19.21,
+        "annual_volatility": 37.06,
+        "distance_to_52w_high": -1.08
+      },
+      "is_buy": false,
+      "is_sell": false,
+      "summary": "持股觀察中（🔥 極強多頭排列 (K > 5MA > 20MA > 60MA)）"
+    },
+    "chips": {
+      "foreign_net_5d": 660.0,
+      "trust_net_5d": 180.0,
+      "dealer_net_5d": 25.0,
+      "total_net_5d": 865.0,
+      "trust_consecutive_buy": true,
+      "foreign_status": "大幅加碼",
+      "trust_status": "加碼進駐",
+      "accumulation_ratio": 1.0,
+      "is_accumulating": true,
+      "block_price": null,
+      "block_shares": 0,
+      "chip_signals": [
+        "🟢 投信連買作帳吸籌中",
+        "🟢 外資5日加碼 660.0 張",
+        "🟢 投信5日買超 180.0 張",
+        "🔥 法人連續加碼 (5日累計淨買 865.0 張)"
+      ],
+      "status_summary": "🔥 大戶籌碼集中偏多",
+      "is_rechecked": false
+    },
+    "news": {
+      "sentiment_score": 1,
+      "sentiment_label": "🔥 題材偏多",
+      "news_list": [
+        {
+          "title": "營收速報 - 天鈺(4961)9月營收21.75億元年增率高達56.95％ - 鉅亨網",
+          "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE13TF92Mll3Q3JRaTgwbzUycmNUZ1pHTm5qYkhMMGE4TDVKbkpYejZpTzctdkh4WFNXazU3dV9kN2JUa0lnVklSNllRMA?oc=5",
+          "source": "鉅亨網",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "4961 天鈺- 天鈺115年9月營收21.75億、年增56.95% - 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBkX19uWFM4QkIxVzVaWElGNjFkLXBhOVh2T2dSU1dWbzNCaThIV0NfNG4xZVg1VEJaUlctc2dJbkdUWG1OZ01lTGRud3AxVGI3ZXhHZGtSQ0c?oc=5",
+          "source": "CMoney",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "營收速報 - 天鈺(4961)9月營收21.75億元年增率高達56.95％｜新聞快訊｜豐雲學堂 - sinotrade.com.tw",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1vSXJMRWtFZ3k4OVQxOE5GeHlHb1hQakdtc1hHVTVkMmU4aWRjc0ZvWFNXUzBGTU85ZU1teUJfRXlzN0tvb2ZpNXZsN1lJU1I3aEZnelFQbm8wbUIweXcybG1mcEM2WlVPZGhET0lRaGh6X3Y4Tmc?oc=5",
+          "source": "sinotrade.com.tw",
+          "date": "Sun, 04 Oct 2026"
+        },
+        {
+          "title": "《業績-半導體》天鈺9月營收為21.75億元，年增56.95% - 富聯網",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZGkzOTFENHBwX2owQTJKWkFUOTlxX1laN1NNWmxWT3lNNDZ5VmNmXzNpWE5MQzRQamxGcVFPNXhnbDhFdVF6YWNJM3o0VHpYMlJkdVRjQVlSZl96U3NvQm9mVVQwQ3YxU2h1WkFfUEhXcTZIVDZqSkUxTEIzT25BcUdROGtLemhN?oc=5",
+          "source": "富聯網",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "【11:34 即時新聞】天鈺(4961)股價上漲至177元、漲幅4.12%，營收連月成長帶動買盤迴流＋股價守穩箱體上緣支撐、主力近20日偏多佈局 - CMoney投資網誌",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNVXoxWkwydzdYRDZUdHMzMm9YdUhDMThEWms3RlFOZXp0dWhRaElLUzZOSFVVeHhkRnVabnRZMGVwSjVMSWxocmg2YkdSWDc4Nk1tQzBLaTNZS0lteTFna1JKeWZ4Xzd3R3ZrS1VYbktuNkg1M0oyMDM4VmFwaW1TRk9QU0hRRzh3b1F3X3p3?oc=5",
+          "source": "CMoney投資網誌",
+          "date": "Mon, 14 Sep 2026"
+        }
+      ],
+      "positive_hits": [
+        "成長"
+      ],
+      "negative_hits": []
+    },
+    "is_strong_buy": false,
+    "scan_time": "21:13:54",
+    "is_rechecked": false
+  },
+  {
+    "stock_id": "7728",
+    "stock_name": "光焱科技",
+    "sector": "上櫃股票",
+    "main_business": "模擬光源 半導體光電轉換測試 晶圓級光電檢測",
+    "fund_ok": true,
+    "fundamental": {
+      "revenue_yoy": 137.33,
+      "revenue_month": "2026/08",
+      "eps": 1.08,
+      "eps_quarter": "2026 Q2",
+      "is_fallback": false
+    },
+    "tech": {
+      "close": 636.0,
+      "bb_upper": 669.09,
+      "bb_mid": 620.1,
+      "bb_lower": 571.11,
+      "bb_bandwidth": 15.8,
+      "is_bb_compressed": false,
+      "is_bb_breakout": false,
+      "macd_hist": 3.63,
+      "macd_turned_positive": false,
+      "macd_bullish": true,
+      "sma5": 640.8,
+      "sma20": 620.1,
+      "sma60": 611.91,
+      "trend_pattern": "📈 短多格局 (站穩月線，5MA大於20MA)",
+      "signal_type": "☕ 持股觀望",
+      "beauty_score": 34.9,
+      "beauty_status": "LOW",
+      "beauty_data_quality": "PASS",
+      "beauty_trading_days": 242,
+      "beauty_components": {
+        "trend": 18.8,
+        "stair_step": 9.1,
+        "high_52w": 0.0,
+        "drawdown": 0.0,
+        "momentum": 6.0,
+        "volatility": 1.0
+      },
+      "beauty_reasons": [
+        "收盤站上 20 日線",
+        "20 日線高於 60 日線",
+        "一年期報酬為正",
+        "距離 52 週高點過遠",
+        "一年期最大回撤過深",
+        "20 日年化波動明顯偏高"
+      ],
+      "breakout_52w_high": false,
+      "near_52w_high": false,
+      "beauty_metrics": {
+        "return_20d": -0.47,
+        "return_60d": -1.78,
+        "return_120d": -23.97,
+        "return_240d": 99.38,
+        "max_drawdown": -43.75,
+        "annual_volatility": 53.71,
+        "distance_to_52w_high": -27.87
+      },
+      "is_buy": false,
+      "is_sell": false,
+      "summary": "持股觀察中（📈 短多格局 (站穩月線，5MA大於20MA)）"
+    },
+    "chips": {
+      "foreign_net_5d": 38.0,
+      "trust_net_5d": 0.0,
+      "dealer_net_5d": 3.0,
+      "total_net_5d": 41.0,
+      "trust_consecutive_buy": false,
+      "foreign_status": "中性",
+      "trust_status": "中性",
+      "accumulation_ratio": 1.0,
+      "is_accumulating": false,
+      "block_price": null,
+      "block_shares": 0,
+      "chip_signals": [],
+      "status_summary": "⚪ 籌碼面溫和中性",
+      "is_rechecked": false
+    },
+    "news": {
+      "sentiment_score": 0,
+      "sentiment_label": "⚪ 題材平穩",
+      "news_list": [
+        {
+          "title": "7728 光焱科技 - 影片13:50光焱科技 https://youtu.be/a... - 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9rM1hQanJidDRnMEhRRHU4cUh1ZDRGUmZQak9NWjVVSmFWVkwtVHZEc3lqd0RXWEhuV05vMlc4ZEV2bUhvS2xJZkUyUktpV0dyY25ITWdBWFA?oc=5",
+          "source": "CMoney",
+          "date": "Tue, 22 Sep 2026"
+        },
+        {
+          "title": "光焱科技(7728)矽光子占比一年衝4倍！NightJar-H年底迎HVM驗證、新廠年產能上看250台 - news.cnyes.com",
+          "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1GZldKZ0hXbno0cXg2c0RBc0kwV3FJclZfd1ZySnUwRG5fR2FNUVpIc29IN1NDVS1GQjIweDZLSUJheWh3Z1lLTF92YXdpanc?oc=5",
+          "source": "news.cnyes.com",
+          "date": "Fri, 18 Sep 2026"
+        },
+        {
+          "title": "光焱科技董事會決議發行國內第二次無擔保轉換公司債，上限6億元 - 台視全球資訊網",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQZzh6TzVKR21Nck9MUDh4NE1ZeHk1bWFLOUF6bkR2YVdZR3FDQXV2TjBJN0YxMUFOR2otckNvb2k2RVZ3Q1huR1lVRTJwRFp4dHRDM3VBMXZNVVdFZFJ4QkdVaDVpMldla2NzRnp5WDZVNng4UVNZbmJoRXZaaVYxVExyMXZIUC1fRjl5M3o3elE2QQ?oc=5",
+          "source": "台視全球資訊網",
+          "date": "Tue, 22 Sep 2026"
+        },
+        {
+          "title": "光焱科技矽光產品小量出貨、下半年營運看增- 新聞 - MoneyDJ理財網",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOR0FmYlZxSWlQVTVIQzNSc01STW9jeTk0MlE5N0k4YjE0MTV1ZzlfbnAyeWNaVF9VWnVUNjA1a1dteGxzSGoyUjhxMl9fcVdiVDhEZ19GR2lfQTJwRWp3WFpkVXRsdkhJRHdCdWlYbjNwcmZldmhoeWlycXZFNVowRGdNaTg1SmgwR2ZLMzVXTXlHUQ?oc=5",
+          "source": "MoneyDJ理財網",
+          "date": "Wed, 22 Jul 2026"
+        },
+        {
+          "title": "光焱科技 (7728)做甚麼的？矽光子檢測黑馬！AI CPO 關鍵推手，營收與營運全解析 - pocket.tw",
+          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBTYWNiY3p1eXRkeS0xT04xLWM0TC1kOW9ENGpiSkhra2NyTnVzb0dfOTdfVTdiSDhUR1ZMbDhYbUZ0TTBtcGZmcWJlM0JDSUwybWJEQ1dYMzUtajQ5?oc=5",
+          "source": "pocket.tw",
+          "date": "Mon, 02 Feb 2026"
+        }
+      ],
+      "positive_hits": [],
+      "negative_hits": []
+    },
+    "is_strong_buy": false,
+    "scan_time": "21:14:02",
+    "is_rechecked": false
+  },
+  {
+    "stock_id": "3443",
+    "stock_name": "創意",
+    "sector": "上市股票",
+    "main_business": "一、研究、開發、生產、製造及銷售：各種應用積體電路1.嵌入式記 憶體及邏輯元件。2.設計用元件資料庫。3.設計用自動化工具 二、提供前述產品相關及客戶委託之技術服務。",
+    "fund_ok": true,
+    "fundamental": {
+      "revenue_yoy": 97.78,
+      "revenue_month": "2026/09",
+      "eps": 11.61,
+      "eps_quarter": "2026 Q2",
+      "is_fallback": false
+    },
+    "tech": {
+      "close": 8600.0,
+      "bb_upper": 9174.04,
+      "bb_mid": 7074.75,
+      "bb_lower": 4975.46,
+      "bb_bandwidth": 59.35,
+      "is_bb_compressed": false,
+      "is_bb_breakout": false,
+      "macd_hist": 72.67,
+      "macd_turned_positive": false,
+      "macd_bullish": true,
+      "sma5": 8073.0,
+      "sma20": 7074.75,
+      "sma60": 5554.58,
+      "trend_pattern": "🔥 極強多頭排列 (K > 5MA > 20MA > 60MA)",
+      "signal_type": "☕ 持股觀望",
+      "beauty_score": 73.6,
+      "beauty_status": "WATCHLIST",
+      "beauty_data_quality": "PASS",
+      "beauty_trading_days": 242,
+      "beauty_components": {
+        "trend": 25.0,
+        "stair_step": 13.7,
+        "high_52w": 20.0,
+        "drawdown": 0.0,
+        "momentum": 14.9,
+        "volatility": 0.0
+      },
+      "beauty_reasons": [
+        "收盤站上 20 日線",
+        "20 日線高於 60 日線",
+        "60 日線高於 120 日線",
+        "一年期報酬為正",
+        "近期區塊高點多數墊高",
+        "近期區塊低點多數墊高",
+        "收盤突破前 240 日高點",
+        "一年期最大回撤過深",
+        "中期與中長期動能同向向上",
+        "20 日年化波動過高"
+      ],
+      "breakout_52w_high": true,
+      "near_52w_high": true,
+      "beauty_metrics": {
+        "return_20d": 48.28,
+        "return_60d": 98.16,
+        "return_120d": 183.25,
+        "return_240d": 481.76,
+        "max_drawdown": -42.23,
+        "annual_volatility": 73.86,
+        "distance_to_52w_high": 0.88
+      },
+      "is_buy": false,
+      "is_sell": false,
+      "summary": "持股觀察中（🔥 極強多頭排列 (K > 5MA > 20MA > 60MA)）"
+    },
+    "chips": {
+      "foreign_net_5d": 281.0,
+      "trust_net_5d": -498.0,
+      "dealer_net_5d": 108.0,
+      "total_net_5d": -109.0,
+      "trust_consecutive_buy": false,
+      "foreign_status": "中性",
+      "trust_status": "中性",
+      "accumulation_ratio": 1.0,
+      "is_accumulating": false,
+      "block_price": null,
+      "block_shares": 0,
+      "chip_signals": [],
+      "status_summary": "⚪ 籌碼面溫和中性",
+      "is_rechecked": false
+    },
+    "news": {
+      "sentiment_score": 2,
+      "sentiment_label": "🔥 題材偏多",
+      "news_list": [
+        {
+          "title": "3443 創意 - 10/5收盤 創意上漲收在8600塊 景碩上漲收在1095塊 - 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5jZ3FrbjJNSlYtZkE5dTJJYWtNY2JSSUY1Sk5IdkdqMkQ2X2ZmLXNMUTBSMF9Ec2FjWDVwcVJUMUNXT2JMZGQ2WXB6VXpQUUo4eUFaTjBXT3E?oc=5",
+          "source": "CMoney",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "焦點股》創意：台積電最強「親兒子」 明日出關噴漲停再創天價 - 自由財經",
+          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9qS2txRnlWaXM4V2RmV194TW5nY2hqYTdPSnlpX3JDZnRpZmVTalBZVU1IaW1BcEZ3NHBib0xVRWx6UGg3Tm9wR3F1a0xVVzZVdlNWSmE3eTJwekEyZEpJ0gFkQVVfeXFMT2lhNURzV3ZhZXdJSFdOc1VsWUhnemRBWm8wbGRNRU4zUEhPdk9LOUlwQjQyYmlpRkxiSGR3YXVSRENrenpnMktHWld5VldNTmZPS3JEVmo0ZE1YdGlmdkN5Y2h3Vw?oc=5",
+          "source": "自由財經",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "創意營收／9月再登峰年增97% 單月、單季雙創新高 - UDN",
+          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1uZ1hSdXRKWXR6RlYwM2lzWXJycHhDY1ZJWjB6bm9TTzZnbDRfQUpUdFVEUjlKenlzVElQSzdPX3VpU2liZGlvcXhoYzNuWDM50gFWQVVfeXFMTldDcEVKMnVYUFNHbENfZFNhbUJIbHpmVGlnWWJOcEl1NjFERmpZZFdCcmdQa1JiTFdDNlpLWVhxRFlXSnh0dEwyU0VocjhIdXAtd1dNT2c?oc=5",
+          "source": "UDN",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "創意月營收首破70億元；Q3續寫新高/季增35% - 台視全球資訊網",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQUXdNWmZLTERWd2VFdkxpVF9EMmtxUDJkUVhUN19BSzFEZXpTR1l0bTlsTUg3V3BxR2RlZm5xVjFJcGFubXhBQ2V1dkN3eE5WYzQzeVkzQ1hqbkdVSkQ0eE5oU040akxzb01ET0pxdEhCcE85TkNraGhyS3U0cTZJM1JhbEl6WHJ6cWxpaGIxSEhodw?oc=5",
+          "source": "台視全球資訊網",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "營收：創意(3443)9月營收71億4523萬元，續創高，月增率22.34%，年增率97.78% - 富聯網",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQYmlzMkN5d0VFSWZVdldzNDFkY1pETW9pZXFLcnd6eEh5d0w5ZFZWTGFXNVBPVHc1SVkxMXVqbXZwbVhSZjdmM0ZRdWJEdVpaaWlhR0RWMTVmX0FOUDVoUGk1bWxmS0c0VEtpR0FjS1lTUkFVc3ctanpNRVNpaVJKMXgyY3B0WFNQ?oc=5",
+          "source": "富聯網",
+          "date": "Mon, 05 Oct 2026"
+        }
+      ],
+      "positive_hits": [
+        "漲停",
+        "創高"
+      ],
+      "negative_hits": []
+    },
+    "is_strong_buy": false,
+    "scan_time": "21:14:03",
+    "is_rechecked": false
+  },
+  {
+    "stock_id": "7714",
+    "stock_name": "創泓科技",
+    "sector": "上櫃股票",
+    "main_business": "網路資訊安全軟硬體銷售 數據安全、雲端防禦及資安管理監控服務 人力及技術教育訓練及AI語音辨識銷售",
+    "fund_ok": true,
+    "fundamental": {
+      "revenue_yoy": 15.11,
+      "revenue_month": "2026/08",
+      "eps": 2.41,
+      "eps_quarter": "2026 Q2",
+      "is_fallback": false
+    },
+    "tech": {
+      "close": 169.5,
+      "bb_upper": 185.25,
+      "bb_mid": 168.7,
+      "bb_lower": 152.15,
+      "bb_bandwidth": 19.63,
+      "is_bb_compressed": false,
+      "is_bb_breakout": false,
+      "macd_hist": -0.43,
+      "macd_turned_positive": false,
+      "macd_bullish": false,
+      "sma5": 168.8,
+      "sma20": 168.7,
+      "sma60": 167.36,
+      "trend_pattern": "🔥 極強多頭排列 (K > 5MA > 20MA > 60MA)",
+      "signal_type": "☕ 持股觀望",
+      "beauty_score": 52.3,
+      "beauty_status": "LOW",
+      "beauty_data_quality": "PASS",
+      "beauty_trading_days": 242,
+      "beauty_components": {
+        "trend": 25.0,
+        "stair_step": 10.0,
+        "high_52w": 7.0,
+        "drawdown": 0.0,
+        "momentum": 9.3,
+        "volatility": 1.0
+      },
+      "beauty_reasons": [
+        "收盤站上 20 日線",
+        "20 日線高於 60 日線",
+        "60 日線高於 120 日線",
+        "一年期報酬為正",
+        "近期區塊低點多數墊高",
+        "距離 52 週高點 25% 內",
+        "一年期最大回撤過深",
+        "20 日年化波動明顯偏高"
+      ],
+      "breakout_52w_high": false,
+      "near_52w_high": false,
+      "beauty_metrics": {
+        "return_20d": 5.94,
+        "return_60d": -0.54,
+        "return_120d": 36.77,
+        "return_240d": 38.39,
+        "max_drawdown": -39.76,
+        "annual_volatility": 62.16,
+        "distance_to_52w_high": -17.32
+      },
+      "is_buy": false,
+      "is_sell": false,
+      "summary": "持股觀察中（🔥 極強多頭排列 (K > 5MA > 20MA > 60MA)）"
+    },
+    "chips": {
+      "foreign_net_5d": -15.0,
+      "trust_net_5d": 0.0,
+      "dealer_net_5d": -1.0,
+      "total_net_5d": -16.0,
+      "trust_consecutive_buy": false,
+      "foreign_status": "中性",
+      "trust_status": "中性",
+      "accumulation_ratio": 1.0,
+      "is_accumulating": false,
+      "block_price": null,
+      "block_shares": 0,
+      "chip_signals": [],
+      "status_summary": "⚪ 籌碼面溫和中性",
+      "is_rechecked": false
+    },
+    "news": {
+      "sentiment_score": 3,
+      "sentiment_label": "🔥 題材偏多",
+      "news_list": [
+        {
+          "title": "創泓科技股份有限公司 - MoneyDJ理財網",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQd0lFSTdocHZSTDluaEdNdWl1UDRkU1VEUWJTZ0Q1em9LcXVScEZvdVVveGtrNjd5Zm5ZM24xYlpnWFNXMGpMU0tlMklubkR2YUdXSTNYU0JZTTl5N2ZRS3A2NXlrWkRFV0l6eHZXWXU4Y1NhYjJJRGM2cnRFVFpVX25OMEx5Uk51clRnWHhwMEN1SmpyM2dN?oc=5",
+          "source": "MoneyDJ理財網",
+          "date": "Thu, 17 Sep 2026"
+        },
+        {
+          "title": "【12:50 即時新聞】創泓科技(7714)股價續強漲2.98%至190元，受營收創高與無人機反制標案題材推升＋多頭技術結構配合法人買盤支撐 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1oUTVoMDBBV3Fka2RRWXdiN0FfeFdVbXBObVNITWNTVnpJQXJDWVIycUh1UGF3bWNoNFR5c2xHaHliT05RSHEyQ3ZieG9zcXhRbC1CTUFUc3Q?oc=5",
+          "source": "CMoney",
+          "date": "Mon, 13 Jul 2026"
+        },
+        {
+          "title": "【09:37 即時新聞】創泓科技(7714)股價上漲至183元、漲幅5.48%，資安＋AI無人載具成長題材帶動買盤，法人與主力籌碼近日轉多延續多方結構 - CMoney投資網誌",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZGZObFVJdXpIWllHekZZcGl6dGRzbkJoT3ZKaVVhcUUyVWhsUU1HV2ZUS0pxOGl2bFVBTzhBVmloaW1sdTcwX3FOTFBTWVhGcUJ3clZFcmZZYlBYMk12RHR1REQ3alQyTXJ5LTlFMlhnUTJfQ1dCY2tJUUhCUk9hOFFzU05SWnV2RVFSTnVB?oc=5",
+          "source": "CMoney投資網誌",
+          "date": "Mon, 14 Sep 2026"
+        },
+        {
+          "title": "多重題材加持 創泓科技一字鎖漲停 - 經濟日報",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFAtZzhIWjZhTTBHeTNIby1kTW5BanF6SW9ZOHlfQ1oyZU9oZzM5bExjMkJtaEhDZzQ5QW1pX3lyalg5M3hfVnpCOTJ5ZXRmS0Y1RW93RlBJamxQZ9IBX0FVX3lxTE5nY3FJMVVnYVh3Ylc2V2hkOExLaDJnelBPRXA2b2cwQlhoMDBOcjJPQ0JHUXhYZVM5NnhtMHZZVUxpS2YxVHdXbVRZU285NzBXX0h6YVl0QmhUNE9UZnNv?oc=5",
+          "source": "經濟日報",
+          "date": "Thu, 09 Jul 2026"
+        },
+        {
+          "title": "創泓科技資安AI出貨升溫、無人機方案展開 - 台視全球資訊網",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNX2FvNWdNQXI2bmhNZ1FPcDQ4SlZ3UVBSRGJUMFdrMkpXMWZ4RXM0RThnMjk2dnlHd1BxbmJzbTlyOXAwcms2Nzh1My10N1VVUU43WG5Qc0tkRktlSEk5WHNIbURmc3hFeTdwclRnbl9vZnZfOWhVVFBNMXJVOUJzRGstTF9HRVFWUW03RUtid0Jrdw?oc=5",
+          "source": "台視全球資訊網",
+          "date": "Wed, 22 Jul 2026"
+        }
+      ],
+      "positive_hits": [
+        "漲停",
+        "創高",
+        "成長"
+      ],
+      "negative_hits": []
+    },
+    "is_strong_buy": false,
+    "scan_time": "21:14:03",
+    "is_rechecked": false
+  },
+  {
+    "stock_id": "2059",
+    "stock_name": "川湖",
+    "sector": "上市股票",
+    "main_business": "研發、設計、製造和銷售伺服器等用導軌及其週邊零組件生產及買賣 鉸鏈(筆記型電腦鉸鏈)及其零組件之製造生產及買賣 滑軌之製造生產及買賣",
+    "fund_ok": true,
+    "fundamental": {
+      "revenue_yoy": 344.42,
+      "revenue_month": "2026/08",
+      "eps": 74.38,
+      "eps_quarter": "2026 Q2",
+      "is_fallback": false
+    },
+    "tech": {
+      "close": 13355.0,
+      "bb_upper": 13689.53,
+      "bb_mid": 12481.0,
+      "bb_lower": 11272.47,
+      "bb_bandwidth": 19.37,
+      "is_bb_compressed": false,
+      "is_bb_breakout": false,
+      "macd_hist": -35.02,
+      "macd_turned_positive": false,
+      "macd_bullish": false,
+      "sma5": 12301.0,
+      "sma20": 12481.0,
+      "sma60": 11370.52,
+      "trend_pattern": "⚪ 區間震盪整理",
+      "signal_type": "☕ 持股觀望",
+      "beauty_score": 68.5,
+      "beauty_status": "WATCHLIST",
+      "beauty_data_quality": "PASS",
+      "beauty_trading_days": 242,
+      "beauty_components": {
+        "trend": 25.0,
+        "stair_step": 13.4,
+        "high_52w": 16.0,
+        "drawdown": 0.0,
+        "momentum": 13.1,
+        "volatility": 1.0
+      },
+      "beauty_reasons": [
+        "收盤站上 20 日線",
+        "20 日線高於 60 日線",
+        "60 日線高於 120 日線",
+        "一年期報酬為正",
+        "近期區塊高點多數墊高",
+        "近期區塊低點多數墊高",
+        "距離 52 週高點 8% 內",
+        "一年期最大回撤過深",
+        "中期與中長期動能同向向上",
+        "20 日年化波動明顯偏高"
+      ],
+      "breakout_52w_high": false,
+      "near_52w_high": false,
+      "beauty_metrics": {
+        "return_20d": -0.71,
+        "return_60d": 62.45,
+        "return_120d": 289.03,
+        "return_240d": 274.88,
+        "max_drawdown": -32.48,
+        "annual_volatility": 60.41,
+        "distance_to_52w_high": -7.64
+      },
+      "is_buy": false,
+      "is_sell": false,
+      "summary": "持股觀察中（⚪ 區間震盪整理）"
+    },
+    "chips": {
+      "foreign_net_5d": 80.0,
+      "trust_net_5d": 1.0,
+      "dealer_net_5d": 41.0,
+      "total_net_5d": 121.0,
+      "trust_consecutive_buy": true,
+      "foreign_status": "中性",
+      "trust_status": "中性",
+      "accumulation_ratio": 1.0,
+      "is_accumulating": false,
+      "block_price": null,
+      "block_shares": 0,
+      "chip_signals": [
+        "🟢 投信連買作帳吸籌中"
+      ],
+      "status_summary": "🔥 大戶籌碼集中偏多",
+      "is_rechecked": false
+    },
+    "news": {
+      "sentiment_score": 4,
+      "sentiment_label": "🔥 題材偏多",
+      "news_list": [
+        {
+          "title": "2059 川湖 - 還好删得快，差点在12800元下車。 - 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFAyRHpjeHRDczJiclBDWU1UeGZlMU5DMFN3ZlhwNl9IdERMTWVxVGUtSFA3Y2ZuM1ByOUpibm92UFNhRXhtSkxWbzRBRVpTXy14bnN3cWZkT2I?oc=5",
+          "source": "CMoney",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "股后川湖漲停！抱1張現賺121萬　高價股4檔亮燈 - ETtoday財經雲",
+          "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1STGtyVnhsMGhqX2t0U1B4RE9mRHVQQlJsQmV1azkxSDNKaTZkdXpfc1VlcXNNWWY1ZGlTYTl6U21FanZhNXoxUHBDWkFGWlV6dVHSAVBBVV95cUxQNDUteWNNWTlYMUw4aWFZVE9ESVdrRVEwdENEdzBLaW9oeHpDUi1SalRDYng3Yk9EaExDcDd0QUxOcGJHNER5cjFJRlI4REs0Sg?oc=5",
+          "source": "ETtoday財經雲",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "川湖衝漲停 盤中一度超車股王信驊 - 自由財經",
+          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBEcnNheXYyZm93NFhNSHFTdzV5bXU0WTJqYVo4MmlKVUtUdzVpRlNSLXZIQjZPLW1xX0tEcGRJMHNDTlg3RC1hX0REaFFMUlJXNDJ0NDloMFI1ZUFQaXQ0?oc=5",
+          "source": "自由財經",
+          "date": "Mon, 24 Aug 2026"
+        },
+        {
+          "title": "台股閃現「56千金」盛況！股后川湖5檔飆漲停 奇鋐欣興5檔刷新天價 - Yahoo股市",
+          "link": "https://news.google.com/rss/articles/CBMisgNBVV95cUxOX094eUlEbVFxc016eW5SLXNkT0VHX3lPSzVyQmRtYVlnZGJoZVJ4X1JXUzNoalk0SWhLVlo4VERILUZwR3ZSa3BOX3NtZ2lybmRaRFF2Z2o5NTFEZHRkdDNEdzFrb2lFaGVjMHlPTEJScmVjekJ5RkRVQldRMHBzaWg0c2dVT3FoaEJmYjNDc180Vld0TzNETDRKT0gyUW1HaUdoajVWSVgyRWFXWWJ6dG5RLXVnNk9fNzBTWG1ZbVI5U1U5d0RDQktEQUkyMUQ2VXlzdWlvbDFaZWg5NzN6VV9PcUxoR2d1YzB5MTBRUEx1WXNtMUJ4R2RndzdZaVFGRXAxRDBDelFxMGh4QWhJdE1IYzBpdEk1LUpvaHkzQjV4clQ1SXBQVnFESXZ4U0QwZEM0Umhna09yVmp0NHV6ODB6UDFabUFFZ0FnZVJtSUExREpCTVY0ZEF6RjJaSlBvTEpELVVONmh2SXJvNzVfeW5BV0Vjd0NCMHF2RFNUVW9aSHo4YVp6UTdRT2gtME9JZEhkS21YeWV4dzRKWndQT3R5b1NPU3NNOEZTZGZ3c2Nidw?oc=5",
+          "source": "Yahoo股市",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "台股叩關5萬點56千金盛況再現 川湖、台光電等8檔高價股攻漲停 - news.cnyes.com",
+          "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9HeHl6T1RjQV9qQ2NlQTltMjdmYks2RUFjQk4wMnYtNHQtNHZtOXNHOFpRQW5fMWk3dHpVa0dWVzV5Wm1RN3p3M2pGX3Z5QVk?oc=5",
+          "source": "news.cnyes.com",
+          "date": "Mon, 05 Oct 2026"
+        }
+      ],
+      "positive_hits": [
+        "漲停"
+      ],
+      "negative_hits": []
+    },
+    "is_strong_buy": false,
+    "scan_time": "21:14:04",
+    "is_rechecked": false
+  },
+  {
+    "stock_id": "8299",
+    "stock_name": "群聯",
+    "sector": "上櫃股票",
+    "main_business": "IC設計業 半導體業 電腦及週邊設備業",
+    "fund_ok": true,
+    "fundamental": {
+      "revenue_yoy": 376.52,
+      "revenue_month": "2026/08",
+      "eps": 118.57,
+      "eps_quarter": "2026 Q2",
+      "is_fallback": false
+    },
+    "tech": {
+      "close": 2100.0,
+      "bb_upper": 2240.5,
+      "bb_mid": 2076.5,
+      "bb_lower": 1912.5,
+      "bb_bandwidth": 15.8,
+      "is_bb_compressed": false,
+      "is_bb_breakout": false,
+      "macd_hist": 1.16,
+      "macd_turned_positive": false,
+      "macd_bullish": true,
+      "sma5": 2114.0,
+      "sma20": 2076.5,
+      "sma60": 2008.42,
+      "trend_pattern": "📈 短多格局 (站穩月線，5MA大於20MA)",
+      "signal_type": "☕ 持股觀望",
+      "beauty_score": 38.3,
+      "beauty_status": "LOW",
+      "beauty_data_quality": "PASS",
+      "beauty_trading_days": 242,
+      "beauty_components": {
+        "trend": 18.8,
+        "stair_step": 9.1,
+        "high_52w": 0.0,
+        "drawdown": 0.0,
+        "momentum": 8.5,
+        "volatility": 2.0
+      },
+      "beauty_reasons": [
+        "收盤站上 20 日線",
+        "20 日線高於 60 日線",
+        "一年期報酬為正",
+        "距離 52 週高點過遠",
+        "一年期最大回撤過深",
+        "20 日年化波動偏高"
+      ],
+      "breakout_52w_high": false,
+      "near_52w_high": false,
+      "beauty_metrics": {
+        "return_20d": 5.0,
+        "return_60d": -5.41,
+        "return_120d": 20.19,
+        "return_240d": 148.78,
+        "max_drawdown": -47.71,
+        "annual_volatility": 44.91,
+        "distance_to_52w_high": -26.55
+      },
+      "is_buy": false,
+      "is_sell": false,
+      "summary": "持股觀察中（📈 短多格局 (站穩月線，5MA大於20MA)）"
+    },
+    "chips": {
+      "foreign_net_5d": -275.0,
+      "trust_net_5d": 50.0,
+      "dealer_net_5d": 15.0,
+      "total_net_5d": -212.0,
+      "trust_consecutive_buy": true,
+      "foreign_status": "中性",
+      "trust_status": "中性",
+      "accumulation_ratio": 1.0,
+      "is_accumulating": false,
+      "block_price": null,
+      "block_shares": 0,
+      "chip_signals": [
+        "🟢 投信連買作帳吸籌中"
+      ],
+      "status_summary": "🔥 大戶籌碼集中偏多",
+      "is_rechecked": false
+    },
+    "news": {
+      "sentiment_score": 1,
+      "sentiment_label": "🔥 題材偏多",
+      "news_list": [
+        {
+          "title": "8299 群聯- 群聯股價預估- 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBkUlJRaWNhUTNrR21hTWZnUXpUNUdZM3hzcmlpQlJzT1VwajVqT1hCM18tTElmRWFCNGViWjF3RERFTWp5VDh4Tm9VUmpwSVlWVFdXUmxTb1Q?oc=5",
+          "source": "CMoney",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "Agentic AI落地，群聯累積客製拚規格化 - 新聞 - MoneyDJ理財網",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOUlJFNFBkMjg3b0h6YXhYS3A2VXhmc3Y5bXNkbVhob3Z3U2o3bmQwM1dYdWg5X0RyT2VGb0toTWZSTTUwMjdxVWM1OVdnbGY2eWQ0QjB5ay1aVFNNLVRsaGxXa3RGTlJTYmZEV1JGa3JfQzlOZ1RvM05nb2kxdmU0SU5MSXNaZFZUallXcnRERXJFQQ?oc=5",
+          "source": "MoneyDJ理財網",
+          "date": "Fri, 02 Oct 2026"
+        },
+        {
+          "title": "群聯(8299)不是輝達認證商，為何能攜Tesla Megapack搶進DSX AI工廠？第二成長曲線先看這3點 - news.cnyes.com",
+          "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE02aWFBNUl4LUQ0d05GU0JkTDhXRkdoSW1LZ0lVRk54bnRJY1ZVZGRaMU92d1IzR01UUTdRN3A0MENQcWFvVVlrS3YxeUNTc2c?oc=5",
+          "source": "news.cnyes.com",
+          "date": "Tue, 29 Sep 2026"
+        },
+        {
+          "title": "記憶體多頭帶動群聯目標價NAND市場基本面加速徹底粉碎不漲價預期- 日報 - 工商時報",
+          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5mVW85QVY1dUZuY2lRT1Y5OUxDYUs5eWpoQzRwSjU3YUZQdnRHZzZXejZXVDFpQWRnLXp0SGhIS0VPcGhjVkRETGZFMjY1Z19Sb1pQM0REcUtxVmRwNGZn?oc=5",
+          "source": "工商時報",
+          "date": "Wed, 23 Sep 2026"
+        },
+        {
+          "title": "8299 群聯- 來都來了，記憶體真的不缺貨在走吧！！上游不缺營收不是倍增？ - 股市爆料同學會 - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9oVk96Wm5qblg4cnhQWE5Jc3pFQ0JLalpUTWxlQ0NjVk40d0lZeHltTWVONjl0V0RZZVdoSGNGX1J0UW5XZmFwMDFCOHgtdE04VjVPeUVoTGw?oc=5",
+          "source": "CMoney",
+          "date": "Thu, 01 Oct 2026"
+        }
+      ],
+      "positive_hits": [
+        "成長"
+      ],
+      "negative_hits": []
+    },
+    "is_strong_buy": false,
+    "scan_time": "21:14:09",
+    "is_rechecked": false
+  },
+  {
+    "stock_id": "3008",
+    "stock_name": "大立光",
+    "sector": "上市股票",
+    "main_business": "各式光學鏡頭模組 觀景器模組與光電零組件 以上產品之研發設計生產銷售與技術服務等",
+    "fund_ok": false,
+    "fundamental": {
+      "revenue_yoy": -16.23,
+      "revenue_month": "2026/08",
+      "eps": 35.7,
+      "eps_quarter": "2026 Q2",
+      "is_fallback": false
+    },
+    "tech": {
+      "close": 6730.0,
+      "bb_upper": 7124.6,
+      "bb_mid": 6398.25,
+      "bb_lower": 5671.9,
+      "bb_bandwidth": 22.7,
+      "is_bb_compressed": false,
+      "is_bb_breakout": false,
+      "macd_hist": -48.78,
+      "macd_turned_positive": false,
+      "macd_bullish": false,
+      "sma5": 6238.0,
+      "sma20": 6398.25,
+      "sma60": 5409.22,
+      "trend_pattern": "⚪ 區間震盪整理",
+      "signal_type": "☕ 持股觀望",
+      "beauty_score": 65.4,
+      "beauty_status": "WATCHLIST",
+      "beauty_data_quality": "PASS",
+      "beauty_trading_days": 242,
+      "beauty_components": {
+        "trend": 25.0,
+        "stair_step": 11.5,
+        "high_52w": 12.0,
+        "drawdown": 4.0,
+        "momentum": 12.9,
+        "volatility": 0.0
+      },
+      "beauty_reasons": [
+        "收盤站上 20 日線",
+        "20 日線高於 60 日線",
+        "60 日線高於 120 日線",
+        "一年期報酬為正",
+        "近期區塊低點多數墊高",
+        "距離 52 週高點 15% 內",
+        "一年期最大回撤小於 30%",
+        "中期與中長期動能同向向上",
+        "20 日年化波動過高"
+      ],
+      "breakout_52w_high": false,
+      "near_52w_high": false,
+      "beauty_metrics": {
+        "return_20d": -5.87,
+        "return_60d": 71.94,
+        "return_120d": 154.36,
+        "return_240d": 179.25,
+        "max_drawdown": -28.49,
+        "annual_volatility": 74.44,
+        "distance_to_52w_high": -13.83
+      },
+      "is_buy": false,
+      "is_sell": false,
+      "summary": "持股觀察中（⚪ 區間震盪整理）"
+    },
+    "chips": {
+      "foreign_net_5d": -680.0,
+      "trust_net_5d": -296.0,
+      "dealer_net_5d": 97.0,
+      "total_net_5d": -879.0,
+      "trust_consecutive_buy": false,
+      "foreign_status": "調節賣超",
+      "trust_status": "中性",
+      "accumulation_ratio": 1.0,
+      "is_accumulating": false,
+      "block_price": null,
+      "block_shares": 0,
+      "chip_signals": [
+        "🔴 外資5日調節 -680.0 張"
+      ],
+      "status_summary": "⚠️ 大戶調節偏空",
+      "is_rechecked": false
+    },
+    "news": {
+      "sentiment_score": 0,
+      "sentiment_label": "⚪ 題材平穩",
+      "news_list": [
+        {
+          "title": "【11:27 即時新聞】大立光(3008) 股價走強，法說與CPO題材成盤中焦點 - CMoney投資網誌",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPNGxLazI0RE13ZUpxSy1yWGdoLWJoMHpUdkFoNWJDTnk2YTVsT0c4b1RhTTNRR2RYa1hJdUtmc0xIQ1V1eHBaSHNQbGNORE53aHJFUG9aN0lBaDZ3YURteTUwTV96Tzh3NUxtYndBWWFIOXRUVjB1RHdPbTFVUUNUVlNWWEVNN2hmc09abmF3?oc=5",
+          "source": "CMoney投資網誌",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "大立光要開法說會了! - CMoney",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5ZdWs5dTVtTXUxeE9UNGRiQzRPU2ZqYklTYk1Zd3ZRVm9ybEpfYmdZVTA4RjBEVjdpTDJWOXNpMmlpUEg1MUQ3bGktMjRNWWNhem5XanVPWFE?oc=5",
+          "source": "CMoney",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "焦點股》大立光：9月營收、法說登場 大漲逾7％ - 自由財經",
+          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBaSi1iaVpzT1M0cFl4dlBUNE1fX2NBRDczUThPaXVUNkdQcll4a2d2QXBUVGgzazBTb1MwOThNdVVhSWVnX0NOaXVYcndQN3RvTHJ4Y1VMV3FHWGdQQUdJ0gFkQVVfeXFMUGNlcG0tZHFCZk9HNkw5NGxWdTQxS203bUw4WnZhZ09EQWJNdmNaNGJybC1KLWtRV0hiV0J1ME45UlRrTVVTbkdzaHNwMXAwVzBtb1ZnMkxMTXBncm83c2prUVJYTg?oc=5",
+          "source": "自由財經",
+          "date": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "大立光CPO布局露餡！不只1.6T 目光直指6.4T傳輸商機？ - 工商時報",
+          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9mdTAyemphQVAzaGQxbE9Mc0RoNFladTdlVm1wUktCSV91azZyaWxUUlBNYWJPX0xtU29FNEY2YnBYaTNENHVfbWdoR1R1RDN4Mk9KVk5QeXlEQmUzdk9z?oc=5",
+          "source": "工商時報",
+          "date": "Sun, 04 Oct 2026"
+        },
+        {
+          "title": "大立光9月營收57.79億元月增15.31% 仍處市場拉貨旺季 - news.cnyes.com",
+          "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FMXpQdmw1RE5pT1IzaDNxMV9vR2hfRC1RbFJmVkwwbnFPTUpRemhhRjh5ZTdiT0xwa0c5cVNBeGsxa2x3MDBGUGVPdWlBY2s?oc=5",
+          "source": "news.cnyes.com",
+          "date": "Mon, 05 Oct 2026"
+        }
+      ],
+      "positive_hits": [],
+      "negative_hits": []
+    },
+    "is_strong_buy": false,
+    "scan_time": "21:14:10",
+    "is_rechecked": false
+  }
+]
